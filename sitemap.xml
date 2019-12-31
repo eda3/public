@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://eda3.dev/categories/</loc>
+    <lastmod>2019-12-31T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://eda3.dev/</loc>
     <lastmod>2019-12-31T00:00:00+09:00</lastmod>
   </url>
@@ -13,13 +18,13 @@
   </url>
   
   <url>
-    <loc>https://eda3.dev/2/</loc>
+    <loc>https://eda3.dev/categories/yearly/</loc>
     <lastmod>2019-12-31T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eda3.dev/categories/</loc>
-    <lastmod>2019-06-16T06:58:00+09:00</lastmod>
+    <loc>https://eda3.dev/2/</loc>
+    <lastmod>2019-12-31T00:00:00+09:00</lastmod>
   </url>
   
   <url>
