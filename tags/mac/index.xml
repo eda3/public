@@ -11,7 +11,7 @@
       <html lang="ja-jp">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Mac RSS | eda3.dev</title>
+          <title>Mac RSS | eda3-dev</title>
           <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
         </head>
         <body>
@@ -19,7 +19,7 @@
   <div class="u-wrapper">
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
-        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3.dev</a>
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
       </li>
       
       <li class="Banner-item">
@@ -75,9 +75,9 @@
     </xsl:template>
   </xsl:stylesheet>
   <channel>
-    <title>Mac on eda3.dev</title>
+    <title>Mac on eda3-dev</title>
     <link>https://eda3.dev/tags/mac/</link>
-    <description>Recent content in Mac on eda3.dev</description>
+    <description>Recent content in Mac on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0900</lastBuildDate>
