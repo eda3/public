@@ -11,7 +11,7 @@
       <html lang="ja-jp">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Tags RSS | eda3.dev</title>
+          <title>Homebrew RSS | eda3.dev</title>
           <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
         </head>
         <body>
@@ -50,7 +50,7 @@
               <div class="u-padding">
                 <h2 class="Heading-title">
                   
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/index.xml" rel="bookmark">Tags RSS</a>
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/homebrew/index.xml" rel="bookmark">Homebrew RSS</a>
                   
                 </h2>
                 
@@ -75,12 +75,23 @@
     </xsl:template>
   </xsl:stylesheet>
   <channel>
-    <title>Tags on eda3.dev</title>
-    <link>https://eda3.dev/tags/</link>
-    <description>Recent content in Tags on eda3.dev</description>
+    <title>Homebrew on eda3.dev</title>
+    <link>https://eda3.dev/tags/homebrew/</link>
+    <description>Recent content in Homebrew on eda3.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://eda3.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://eda3.dev/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
+      <link>https://eda3.dev/3/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0900</pubDate>
+      <guid>https://eda3.dev/3/</guid>
+      <description>&lt;p&gt;タイトルどおり&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mas install &lt;span style=&#34;color:#ae81ff&#34;&gt;539883307&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# LINE&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;masが入っていないいない場合はまずそっちから入れる&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ brew install mas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
   </channel>
 </rss>
