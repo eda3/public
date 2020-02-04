@@ -50,7 +50,7 @@
               <div class="u-padding">
                 <h2 class="Heading-title">
                   
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/python/index.xml" rel="bookmark">Python RSS</a>
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/python/index.xml" rel="bookmark">Python RSS</a>
                   
                 </h2>
                 
@@ -76,12 +76,12 @@
   </xsl:stylesheet>
   <channel>
     <title>Python on eda3-dev</title>
-    <link>https://eda3.dev/tags/python/</link>
+    <link>https://eda3.dev/categories/python/</link>
     <description>Recent content in Python on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://eda3.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://eda3.dev/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
       <link>https://eda3.dev/4/</link>
@@ -101,22 +101,6 @@ $env:HTTPS_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt
 python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;http://&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{user}:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{password}@&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{server}:80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; install -U pip --user pyperclip
 python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;http://&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{user}:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{password}@&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{server}:80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; install -U pip --user selenium
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
-      <link>https://eda3.dev/1/</link>
-      <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
-      <guid>https://eda3.dev/1/</guid>
-      <description>&lt;p&gt;PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Python version 2.7 does not support a &#39;F&#39; prefix
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;**[Preferences]**を開く&lt;/li&gt;
-&lt;li&gt;**[Editor]&lt;strong&gt;→&lt;/strong&gt;[Inspections]**を選択&lt;/li&gt;
-&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、**[Code compatibillity inspection]**を選択&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Options&lt;/strong&gt;の中から&lt;strong&gt;2.7&lt;/strong&gt;のチェックを外す&lt;/li&gt;
-&lt;/ol&gt;
-</description>
     </item>
   </channel>
 </rss>

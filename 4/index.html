@@ -1,0 +1,124 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    
+    【Python】PowerShellからプロキシ経由でpip installする方法 | eda3-dev
+    
+  </title>
+  
+  
+  <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
+  
+  <meta name="generator" content="Hugo 0.62.1" />
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://eda3.dev/4/" rel="bookmark">【Python】PowerShellからプロキシ経由でpip installする方法</a>
+  </h2>
+  
+  <time datetime="2020-02-04T00:00:00&#43;09:00">
+    4 February, 2020
+  </time>
+  
+</header>
+  <p>プロキシ経由でpip installする場合、<code>--proxy</code>を設定すること。<br>
+また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。<br>
+以下、例を示す。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$user=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ここにユーザID</span><span style="color:#e6db74">&#34;</span>
+$password=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ここにプロキシのパスワード</span><span style="color:#e6db74">&#34;</span>
+$server=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ここにプロキシサーバアドレス</span><span style="color:#e6db74">&#34;</span>
+
+$env:HTTP_PROXY=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{user}:</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{password}@</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{server}:80</span><span style="color:#e6db74">&#34;</span>
+$env:HTTPS_PROXY=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">https://</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{user}:</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{password}@</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{server}:80</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># pyperclip, seleniumをpip installする場合</span>
+python -m pip --proxy=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{user}:</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{password}@</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{server}:80</span><span style="color:#e6db74">&#34;</span> install -U pip --user pyperclip
+python -m pip --proxy=<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{user}:</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{password}@</span><span style="color:#e6db74">$</span><span style="color:#e6db74">{server}:80</span><span style="color:#e6db74">&#34;</span> install -U pip --user selenium
+</code></pre></div>
+  
+<footer>
+  <ul class="Tags">
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/python/" rel="tag">Python</a>
+    </li>
+    
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/powershell/" rel="tag">PowerShell</a>
+    </li>
+    
+    
+  </ul>
+</footer>
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+  
+</body>
+</html>
