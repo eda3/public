@@ -103,7 +103,7 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/sp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
+      <title>【Python】PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
       <link>https://eda3.dev/1/</link>
       <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
       <guid>https://eda3.dev/1/</guid>

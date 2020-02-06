@@ -48,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://eda3.dev/3/</loc>
-    <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://eda3.dev/tags/line/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
   </url>
@@ -64,6 +59,11 @@
   
   <url>
     <loc>https://eda3.dev/tags/mac/</loc>
+    <lastmod>2020-01-09T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eda3.dev/3/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
   </url>
   

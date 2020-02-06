@@ -11,7 +11,7 @@
       <html lang="ja-jp">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>yearly RSS | eda3-dev</title>
+          <title>Yearly RSS | eda3-dev</title>
           <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
         </head>
         <body>
@@ -50,7 +50,7 @@
               <div class="u-padding">
                 <h2 class="Heading-title">
                   
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/yearly/index.xml" rel="bookmark">yearly RSS</a>
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/yearly/index.xml" rel="bookmark">Yearly RSS</a>
                   
                 </h2>
                 
@@ -75,15 +75,15 @@
     </xsl:template>
   </xsl:stylesheet>
   <channel>
-    <title>yearly on eda3-dev</title>
+    <title>Yearly on eda3-dev</title>
     <link>https://eda3.dev/categories/yearly/</link>
-    <description>Recent content in yearly on eda3-dev</description>
+    <description>Recent content in Yearly on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://eda3.dev/categories/yearly/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>今年一年SNSに共有した記事一覧</title>
+      <title>【Yearly】今年一年SNSに共有した記事一覧</title>
       <link>https://eda3.dev/2/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/2/</guid>

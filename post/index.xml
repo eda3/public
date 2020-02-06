@@ -103,7 +103,7 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/sp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
+      <title>【Mac】HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
       <link>https://eda3.dev/3/</link>
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/3/</guid>
@@ -114,7 +114,7 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/sp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>今年一年SNSに共有した記事一覧</title>
+      <title>【Yearly】今年一年SNSに共有した記事一覧</title>
       <link>https://eda3.dev/2/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/2/</guid>
@@ -472,7 +472,7 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/sp
 </description>
     </item>
     <item>
-      <title>PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
+      <title>【Python】PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
       <link>https://eda3.dev/1/</link>
       <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
       <guid>https://eda3.dev/1/</guid>
