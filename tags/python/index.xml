@@ -80,8 +80,248 @@
     <description>Recent content in Python on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://eda3.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Python】10分で分かるpandas その1</title>
+      <link>https://eda3.dev/5/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0900</pubDate>
+      <guid>https://eda3.dev/5/</guid>
+      <description>
+
+&lt;h1 id=&#34;10分で分かるpandas&#34;&gt;10分で分かるpandas&lt;/h1&gt;
+
+&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+
+&lt;p&gt;この記事はpandas公式チュートリアル「10 minutes to pandas」の写経及び解説です&lt;/p&gt;
+
+&lt;p&gt;以下のURLを参考にしています
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Python3.7&lt;/li&gt;
+&lt;li&gt;Jupyter Lab&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;とりあえずインポート&#34;&gt;とりあえずインポート&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+np
+pd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下のように各モジュールが表示されればOK
+&lt;img width=&#34;651&#34; alt=&#34;スクリーンショット 2020-01-25 11.51.03.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/ae83854a-25f5-7a45-4b91-1e7b239c4b9c.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ModuleNotFoundError: No module named &amp;lsquo;pandas&amp;rsquo;&lt;/strong&gt;と怒られたのでpandasをまず入れます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+&amp;lt;ipython-input-1-59ab05e21164&amp;gt; in &amp;lt;module&amp;gt;
+      1 import numpy as np
+----&amp;gt; 2 import pandas as pd
+
+ModuleNotFoundError: No module named &#39;pandas&#39;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コマンド
+&lt;code&gt;python -m pip install pandas&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;オブジェクトを作る&#34;&gt;オブジェクトを作る&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation&#34;&gt;参考：【10 minutes to pandas - Object creation】&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Seriesクラス&lt;/strong&gt;にリストを入れることで簡単にデータを作ることが出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;
+# 簡単に一列作る
+s = pd.Series(data=[1, 3, 5, np.nan, 6, 8])
+s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;642&#34; alt=&#34;スクリーンショット 2020-01-25 12.05.34.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/16930c2e-cad0-b69b-3ad5-dd8df557af88.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series&#34;&gt;参考：pandas.Series&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;date_range()メソッド&lt;/strong&gt;を使うことで、特定の期間の日付の行を作成出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;
+# 2020年1月１日から6日間のデータ
+dates = pd.date_range(&amp;quot;20200101&amp;quot;, periods=6)
+dates
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;643&#34; alt=&#34;スクリーンショット 2020-01-25 12.14.36.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/80a64cbb-ef3f-e0d6-f1ce-8c94b1655924.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.date_range.html&#34;&gt;参考：pandas.date_range()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;pandasのDataFrameクラス&lt;strong&gt;引数index&lt;/strong&gt;を指定することで、行インデックスを指定することが出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;# 行インデックスに2020年1月1日からのデータを指定
+# 各値にはランダムな数値を入れる
+df = pd.DataFrame(np.random.randn(6, 4), index=dates)
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;648&#34; alt=&#34;スクリーンショット 2020-01-25 12.20.49.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/7d54847d-d63f-bb8b-93f4-b116eea0fd76.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;また、同じくDataFrameクラスの&lt;strong&gt;引数columns&lt;/strong&gt;を指定することで列名を設定することが出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;# 列名ABCDを設定
+df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list(&amp;quot;ABCD&amp;quot;))
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;683&#34; alt=&#34;スクリーンショット 2020-01-25 13.54.51.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/b30003b8-8011-2ef5-9d1e-72e3aeb4e2c6.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas-dataframe&#34;&gt;参考：pandas.DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスに辞書型のデータを渡すことで、辞書型のキーの部分が列名になります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df2 = pd.DataFrame(
+    {
+        &amp;quot;A&amp;quot;: 1.,
+        &amp;quot;B&amp;quot;: pd.Timestamp(&amp;quot;20200101&amp;quot;),
+        &amp;quot;C&amp;quot;: pd.Series(1, index=list(range(4)), dtype=&amp;quot;float32&amp;quot;),
+        &amp;quot;D&amp;quot;: np.array([3] * 4, dtype=&amp;quot;int32&amp;quot;),
+        &amp;quot;E&amp;quot;: pd.Categorical([&amp;quot;test&amp;quot;, &amp;quot;train&amp;quot;, &amp;quot;test&amp;quot;, &amp;quot;train&amp;quot;]),
+        &amp;quot;F&amp;quot;: &amp;quot;foo&amp;quot;,
+    }
+)
+df2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;888&#34; alt=&#34;スクリーンショット 2020-01-25 14.08.34.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/ec976e0a-6ddc-a8da-5d15-7dec6fa81695.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dtypes属性&lt;/strong&gt;に参照することで各列のデータ属性が分かります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df2.dtypes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;854&#34; alt=&#34;スクリーンショット 2020-01-25 14.10.58.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/8c7f2c4a-f1d5-b584-2307-727417fd414d.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Jupyter Labなどを使っている場合、列名がタブ保管で表示されます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;db2.&amp;lt;TAB&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;863&#34; alt=&#34;スクリーンショット 2020-01-25 14.13.28.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/4c87ffbb-5c93-1ac2-b7a2-184d8b891e85.png&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;データを表示する&#34;&gt;データを表示する&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation&#34;&gt;参考：【10 minutes to pandas - Viewing data】&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;head()メソッド&lt;/strong&gt;を使うことでデータの先頭部を表示できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;853&#34; alt=&#34;スクリーンショット 2020-01-25 14.21.33.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/d0f0d698-8f58-272c-cf13-6411870bfbab.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head&#34;&gt;参考：DataFrame.head()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;同じくDataFrameクラスの&lt;strong&gt;trail()メソッド&lt;/strong&gt;を使うことでデータの後尾部を表示できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.tail(2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;859&#34; alt=&#34;スクリーンショット 2020-01-25 14.35.10.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/a8b7b52f-e33a-5da0-9f2c-b2ba6af7bc22.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html#pandas-dataframe-tail&#34;&gt;参考：DataFrame.tail()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;index属性&lt;/strong&gt;を参照することでそのデータの行インデックスを表示出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.index
+df2.index
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;857&#34; alt=&#34;スクリーンショット 2020-01-25 14.36.33.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/6ead009a-2469-561a-955c-0b865ca52412.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas-dataframe-index&#34;&gt;参考：DataFrame.index&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;to_numpy()メソッド&lt;/strong&gt;を使うことでデータをnumpyで操作しやすいデータに変換できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.to_numpy()
+df2.to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;860&#34; alt=&#34;スクリーンショット 2020-01-25 15.25.48.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/ecd8f5ee-9b88-63be-7ae3-242a57d40c85.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas-dataframe-to-numpy&#34;&gt;参考：DataFrame.to_numpy()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;describe()メソッド&lt;/strong&gt;を使うことで、データの各列の簡単な統計を取ることができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df2.describe()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;863&#34; alt=&#34;スクリーンショット 2020-01-25 15.44.36.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/e687573a-b407-b255-4107-2b2a5d063e1a.png&#34;&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html#pandas-dataframe-describe&#34;&gt;参考：DataFrame.describe()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;T属性&lt;/strong&gt;を参照すると、行列入れ替えたデータにアクセスできます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;856&#34; alt=&#34;スクリーンショット 2020-01-25 15.48.59.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/84c69ff0-2dd4-e37d-ec1f-daa729c1aa1e.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;また、DataFrameクラスの&lt;strong&gt;transpose()メソッド&lt;/strong&gt;でも同じく行列の入れ替えを取得できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.transpose()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;858&#34; alt=&#34;スクリーンショット 2020-01-25 16.00.49.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/d01e6e94-53f7-8e13-1aae-e36d1bcd7882.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html#pandas-dataframe-t&#34;&gt;参考：DataFrame.T&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html#pandas-dataframe-transpose&#34;&gt;参考：DataFrame.transpose&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;sort_index()メソッド&lt;/strong&gt;を使用することで、行全体もしくは列全体の並び替えを行うことができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.sort_index()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;864&#34; alt=&#34;スクリーンショット 2020-01-25 16.10.23.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/6e5c2281-5d39-ecd6-dec8-3d3a28ca8e0b.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;引数axis&lt;/strong&gt;に0もしくは&amp;rdquo;index&amp;rdquo;を設定すると行に、1もしくは&amp;rdquo;columns&amp;rdquo;を設定すると、列を軸に並び替えします(デフォルト値0)。また、&lt;strong&gt;引数ascending&lt;/strong&gt;にFalseを指定すると並び順が降順になります(デフォルト値True)。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;
+df.sort_index(axis=0, ascending=False)
+df.sort_index(axis=1, ascending=False)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;869&#34; alt=&#34;スクリーンショット 2020-01-25 16.12.40.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/60398e1c-69a0-67b5-00dc-8513ac05a088.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html#pandas-dataframe-sort-index&#34;&gt;参考：DataFrame.sort_index()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;sort_values()メソッド&lt;/strong&gt;を使用することで行単位もしくは列単位に並び替えを行うことができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.sort_values(by=&amp;quot;B&amp;quot;)
+df.sort_values(by=&amp;quot;2020-01-01&amp;quot;, axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img width=&#34;445&#34; alt=&#34;スクリーンショット 2020-01-25 16.45.17.png&#34; src=&#34;https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/290735/fd9dc57d-108d-9066-3d7f-653483e5fdf1.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html#pandas-dataframe-sort-values&#34;&gt;参考：DataFrame.sort_values()&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ここで力尽きる-残り-多くない-10分とは-thinking&#34;&gt;（ここで力尽きる。残り……多くない？10分とは:thinking: ）&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#selection&#34;&gt;参考：【10 minutes to pandas - Selection】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#missing-data&#34;&gt;参考：【10 minutes to pandas - Missing data】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#operations&#34;&gt;参考：【10 minutes to pandas - Operations】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#merge&#34;&gt;参考：【10 minutes to pandas - Merge】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#grouping&#34;&gt;参考：【10 minutes to pandas - Grouping】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#reshaping&#34;&gt;参考：【10 minutes to pandas - Reshaping】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#time-series&#34;&gt;参考：【10 minutes to pandas - Time series】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#categoricals&#34;&gt;参考：【10 minutes to pandas - Categoricals】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#plotting&#34;&gt;参考：【10 minutes to pandas - Plotting】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#getting-data-in-out&#34;&gt;参考：【10 minutes to pandas - Getting data in/out】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#gotchas&#34;&gt;参考：【10 minutes to pandas - Gotchas】&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
       <link>https://eda3.dev/4/</link>

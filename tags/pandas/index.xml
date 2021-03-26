@@ -11,7 +11,7 @@
       <html lang="ja-jp">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Python RSS | eda3-dev</title>
+          <title>pandas RSS | eda3-dev</title>
           <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
         </head>
         <body>
@@ -50,7 +50,7 @@
               <div class="u-padding">
                 <h2 class="Heading-title">
                   
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/python/index.xml" rel="bookmark">Python RSS</a>
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/pandas/index.xml" rel="bookmark">pandas RSS</a>
                   
                 </h2>
                 
@@ -75,13 +75,13 @@
     </xsl:template>
   </xsl:stylesheet>
   <channel>
-    <title>Python on eda3-dev</title>
-    <link>https://eda3.dev/categories/python/</link>
-    <description>Recent content in Python on eda3-dev</description>
+    <title>pandas on eda3-dev</title>
+    <link>https://eda3.dev/tags/pandas/</link>
+    <description>Recent content in pandas on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://eda3.dev/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://eda3.dev/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Python】10分で分かるpandas その1</title>
       <link>https://eda3.dev/5/</link>
@@ -320,28 +320,6 @@ df.sort_values(by=&amp;quot;2020-01-01&amp;quot;, axis=1)
 &lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#plotting&#34;&gt;参考：【10 minutes to pandas - Plotting】&lt;/a&gt;
 &lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#getting-data-in-out&#34;&gt;参考：【10 minutes to pandas - Getting data in/out】&lt;/a&gt;
 &lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#gotchas&#34;&gt;参考：【10 minutes to pandas - Gotchas】&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
-      <link>https://eda3.dev/4/</link>
-      <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
-      <guid>https://eda3.dev/4/</guid>
-      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br /&gt;
-また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br /&gt;
-以下、例を示す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;$user=&amp;quot;ここにユーザID&amp;quot;
-$password=&amp;quot;ここにプロキシのパスワード&amp;quot;
-$server=&amp;quot;ここにプロキシサーバアドレス&amp;quot;
-
-$env:HTTP_PROXY=&amp;quot;http://${user}:${password}@${server}:80&amp;quot;
-$env:HTTPS_PROXY=&amp;quot;https://${user}:${password}@${server}:80&amp;quot;
-
-# pyperclip, seleniumをpip installする場合
-python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user pyperclip
-python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user selenium
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
   </channel>
