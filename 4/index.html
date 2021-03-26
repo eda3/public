@@ -19,7 +19,7 @@
   
   <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
   
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.55.6" />
 </head>
 <body>
   <nav class="u-background">
@@ -68,20 +68,22 @@
   </time>
   
 </header>
-  <p>プロキシ経由でpip installする場合、<code>--proxy</code>を設定すること。<br>
-また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。<br>
+  <p>プロキシ経由でpip installする場合、<code>--proxy</code>を設定すること。<br />
+また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。<br />
 以下、例を示す。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$user=<span style="color:#e6db74">&#34;ここにユーザID&#34;</span>
-$password=<span style="color:#e6db74">&#34;ここにプロキシのパスワード&#34;</span>
-$server=<span style="color:#e6db74">&#34;ここにプロキシサーバアドレス&#34;</span>
 
-$env:HTTP_PROXY=<span style="color:#e6db74">&#34;http://${user}:${password}@${server}:80&#34;</span>
-$env:HTTPS_PROXY=<span style="color:#e6db74">&#34;https://${user}:${password}@${server}:80&#34;</span>
+<pre><code class="language-powershell">$user=&quot;ここにユーザID&quot;
+$password=&quot;ここにプロキシのパスワード&quot;
+$server=&quot;ここにプロキシサーバアドレス&quot;
 
-<span style="color:#75715e"># pyperclip, seleniumをpip installする場合</span>
-python -m pip --proxy=<span style="color:#e6db74">&#34;http://${user}:${password}@${server}:80&#34;</span> install --user pyperclip
-python -m pip --proxy=<span style="color:#e6db74">&#34;http://${user}:${password}@${server}:80&#34;</span> install --user selenium
-</code></pre></div>
+$env:HTTP_PROXY=&quot;http://${user}:${password}@${server}:80&quot;
+$env:HTTPS_PROXY=&quot;https://${user}:${password}@${server}:80&quot;
+
+# pyperclip, seleniumをpip installする場合
+python -m pip --proxy=&quot;http://${user}:${password}@${server}:80&quot; install --user pyperclip
+python -m pip --proxy=&quot;http://${user}:${password}@${server}:80&quot; install --user selenium
+</code></pre>
+
   
 <footer>
   <ul class="Tags">

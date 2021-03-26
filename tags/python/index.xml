@@ -87,20 +87,22 @@
       <link>https://eda3.dev/4/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/4/</guid>
-      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br&gt;
-また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br&gt;
+      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br /&gt;
+また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br /&gt;
 以下、例を示す。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;$user=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにユーザID&amp;#34;&lt;/span&gt;
-$password=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシのパスワード&amp;#34;&lt;/span&gt;
-$server=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシサーバアドレス&amp;#34;&lt;/span&gt;
 
-$env:HTTP_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt;
-$env:HTTPS_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;$user=&amp;quot;ここにユーザID&amp;quot;
+$password=&amp;quot;ここにプロキシのパスワード&amp;quot;
+$server=&amp;quot;ここにプロキシサーバアドレス&amp;quot;
 
-&lt;span style=&#34;color:#75715e&#34;&gt;# pyperclip, seleniumをpip installする場合&lt;/span&gt;
-python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt; install --user pyperclip
-python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt; install --user selenium
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+$env:HTTP_PROXY=&amp;quot;http://${user}:${password}@${server}:80&amp;quot;
+$env:HTTPS_PROXY=&amp;quot;https://${user}:${password}@${server}:80&amp;quot;
+
+# pyperclip, seleniumをpip installする場合
+python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user pyperclip
+python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user selenium
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     <item>
       <title>【Python】PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
@@ -108,12 +110,16 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://
       <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
       <guid>https://eda3.dev/1/</guid>
       <description>&lt;p&gt;PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;Python version 2.7 does not support a &#39;F&#39; prefix
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;**[Preferences]**を開く&lt;/li&gt;
-&lt;li&gt;**[Editor]&lt;strong&gt;→&lt;/strong&gt;[Inspections]**を選択&lt;/li&gt;
-&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、**[Code compatibillity inspection]**を選択&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Preferences]&lt;/strong&gt;を開く&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Editor]&lt;/strong&gt;→&lt;strong&gt;[Inspections]&lt;/strong&gt;を選択&lt;/li&gt;
+&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、&lt;strong&gt;[Code compatibillity inspection]&lt;/strong&gt;を選択&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Options&lt;/strong&gt;の中から&lt;strong&gt;2.7&lt;/strong&gt;のチェックを外す&lt;/li&gt;
 &lt;/ol&gt;
 </description>

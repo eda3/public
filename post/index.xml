@@ -87,55 +87,81 @@
       <link>https://eda3.dev/6/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/6/</guid>
-      <description>&lt;p&gt;これは &lt;a href=&#34;https://adventar.org/calendars/6102&#34;&gt;箪笥 Advent Calendar 2020&lt;/a&gt; の14日目の記事です。&lt;br&gt;
+      <description>
+
+&lt;p&gt;これは &lt;a href=&#34;https://adventar.org/calendars/6102&#34;&gt;箪笥 Advent Calendar 2020&lt;/a&gt; の14日目の記事です。&lt;br /&gt;
 ※箪笥とは&lt;a href=&#34;https://tablegame.mstdn.cloud/&#34;&gt;卓ゲ箪笥&lt;/a&gt;というボードゲーム・TRPG好きが集まるMastodonインスタンスです。&lt;/p&gt;
+
 &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;みなさん、日程調整はしておりますか？&lt;br&gt;
+
+&lt;p&gt;みなさん、日程調整はしておりますか？&lt;br /&gt;
 私は趣味でボドゲやTRPGやマーダーミステリー、最近はAmong usをよく遊ぶのですが、その中で一番たいへんなのが……&lt;/p&gt;
-&lt;p&gt;・&lt;br&gt;
-・&lt;br&gt;
-・ &lt;br&gt;
-＿人人人人人人人人人人人人人＿&lt;br&gt;
-＞　日程調整がとても大変！　＜&lt;br&gt;
-￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y￣&lt;br&gt;
-・&lt;br&gt;
-・&lt;br&gt;
+
+&lt;p&gt;・&lt;br /&gt;
+・&lt;br /&gt;
+・&lt;br /&gt;
+＿人人人人人人人人人人人人人＿&lt;br /&gt;
+＞　日程調整がとても大変！　＜&lt;br /&gt;
+￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y￣&lt;br /&gt;
+・&lt;br /&gt;
+・&lt;br /&gt;
 ・&lt;/p&gt;
-&lt;p&gt;日程調整を毎回やっていただいてる幹事さん、GMさんの皆様には感謝の念しかありません。&lt;br&gt;
+
+&lt;p&gt;日程調整を毎回やっていただいてる幹事さん、GMさんの皆様には感謝の念しかありません。&lt;br /&gt;
 今回、その日程調整を行ううえで便利な方法について、説明したいと思います。&lt;/p&gt;
+
 &lt;h2 id=&#34;日程調整における一つの問題点&#34;&gt;日程調整における一つの問題点&lt;/h2&gt;
-&lt;p&gt;卓修羅、ゲーム修羅の方々はよく並行して日程調整を行うことがあるかと思います。&lt;br&gt;
+
+&lt;p&gt;卓修羅、ゲーム修羅の方々はよく並行して日程調整を行うことがあるかと思います。&lt;br /&gt;
 日程調整の数が増えれば増えるほど懸念しなければいけないのが&lt;strong&gt;日程の更新漏れ&lt;/strong&gt;でしょう。&lt;/p&gt;
+
 &lt;p&gt;たとえば4つの日程調整を抱えてるとして、1つの日程が確定した場合、残り3つの日程調整表は「予定あり」にしなければなりません。
 そうしないと予定があいてると思われて、予定がダブルブッキングする可能性が増えますよね。&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;├── a(伝◯)      ← ①予定確定！1/30に遊ぶ！
 ├── b(伝◯)      ← ②1/30は予定あり更新しなきゃ……
 ├── c(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
 └── d(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;今回はGoogle スプレッドシートでの日程調整を行うことで、以下のように複数の予定を自動的に変更してくれるような方法を説明します。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;今回はGoogle スプレッドシートでの日程調整を行うことで、以下のように複数の予定を自動的に変更してくれるような方法を説明します。&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;── 親元   ← ②1/30を予定ありに変更
    ├── a  ← ①予定確定！1/30に遊ぶ！
    ├── b  ← ③親元が変更されたので1/30が自動的に予定ありになる
    ├── c  ← ③親元が変更されたので1/30が自動的に予定ありになる
    └── d  ← ③親元が変更されたので1/30が自動的に予定ありになる
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-スプレッドシートによる日程調整&#34;&gt;Google スプレッドシートによる日程調整&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;google-スプレッドシートによる日程調整&#34;&gt;Google スプレッドシートによる日程調整&lt;/h2&gt;
+
 &lt;p&gt;自分が日程調整を行うときによく使うのが、今回の主題となる「Google スプレッドシート」です。
-以下のようなテンプレートをコピーして、日程調整に使っております。&lt;br&gt;
+以下のようなテンプレートをコピーして、日程調整に使っております。&lt;br /&gt;
 こちらのテンプレートについてはご自由にコピーしてお持ち帰りください。&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1IYpUVP0MWcipTCUrPhTaJDzwz4E5yh81YMMsWWCv5Ow/edit#gid=999809520&#34;&gt;日程調整シートテンプレ(Google スプレッドシート)&lt;/a&gt;&lt;/p&gt;
+
 &lt;figure&gt;
     &lt;img src=&#34;3-1.png&#34;
          alt=&#34;日程調整シートテンプレのスクショ&#34;/&gt; 
 &lt;/figure&gt;
 
+
 &lt;p&gt;画像をみていただければ分かる通り、日程調整シートのセルB4には以下の関数が記載されております。&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;=IMPORTRANGE(&amp;ldquo;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&amp;rdquo;,&amp;ldquo;2021/1月!B4:B35&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;上の数式を使うことにより、複数の調整シートがあったとしても&lt;strong&gt;親となるスプレッドシートを一つ更新するだけで&lt;/strong&gt;子の日程調整表がすべて同時に更新される仕組みになっています。&lt;/p&gt;
+
 &lt;p&gt;ちなみに、親元となる個人日程表は以下のリンク先にあります。
 こちらのテンプレートについてもご自由にコピーしてお持ち帰りください。&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214&#34;&gt;個人日程調整テンプレ(Google スプレッドシート)&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;!注意&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;コピーした場合アクセス権限が初期化されます。今回IMPORTRANGE関数を使うため、個人日程調整テンプレについてはコピー後に以下の操作を行ってください。&lt;/p&gt;
+
 &lt;ol&gt;
 &lt;li&gt;画面右上の「共有」ボタンをクリック&lt;/li&gt;
 &lt;li&gt;「リンクを取得」の下側、「制限付き」を「リンクを知っている全員」に変更&lt;/li&gt;
@@ -146,30 +172,45 @@
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+
 &lt;h2 id=&#34;importrange関数&#34;&gt;IMPORTRANGE関数&lt;/h2&gt;
+
 &lt;p&gt;Google スプレッドシートで日程調整するときに便利なアレ、それが&lt;strong&gt;IMPORTRANGE関数&lt;/strong&gt;です。
 構文は以下のとおりです。&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;IMPORTRANGE(スプレッドシートキー, [シート名!]範囲の文字列)
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;importrange関数第一引数スプレッドシートキーについて&#34;&gt;IMPORTRANGE関数第一引数：「スプレッドシートキー」について&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;importrange関数第一引数-スプレッドシートキー-について&#34;&gt;IMPORTRANGE関数第一引数：「スプレッドシートキー」について&lt;/h3&gt;
+
 &lt;p&gt;Google スプレッドシートのURLの太字の部分がスプレッドシートキーです。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/&#34;&gt;https://docs.google.com/spreadsheets/d/&lt;/a&gt;&lt;strong&gt;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&lt;/strong&gt;/edit#gid=1227163214&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/**1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24**/edit#gid=1227163214&#34;&gt;https://docs.google.com/spreadsheets/d/**1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24**/edit#gid=1227163214&lt;/a&gt;&lt;/p&gt;
+
 &lt;figure&gt;
     &lt;img src=&#34;4-1.png&#34;
          alt=&#34;個人日程調整テンプレのURL部分&#34;/&gt; 
 &lt;/figure&gt;
 
+
 &lt;p&gt;こちらのスプレッドシートキーについては&lt;strong&gt;シートをコピーして複製するたび変更&lt;/strong&gt;されるため、今回のテンプレをお持ち帰りいただいた際は適宜変更をお願いします。&lt;/p&gt;
-&lt;h3 id=&#34;importrange関数第二引数シート名範囲の文字列について&#34;&gt;IMPORTRANGE関数第二引数：「[シート名!]範囲の文字列」について&lt;/h3&gt;
+
+&lt;h3 id=&#34;importrange関数第二引数-シート名-範囲の文字列-について&#34;&gt;IMPORTRANGE関数第二引数：「[シート名!]範囲の文字列」について&lt;/h3&gt;
+
 &lt;p&gt;こちらは基本的には日程調整表に表示させたい部分を入れます。
 以下の画像のとおり、シート：「2021/1月」のB列4行目～35行目を表示させる場合は、&lt;strong&gt;2021/1月!B4:B35&lt;/strong&gt;と入力します&lt;/p&gt;
+
 &lt;figure&gt;
     &lt;img src=&#34;4-2.png&#34;
          alt=&#34;個人日程調整テンプレの範囲の部分&#34;/&gt; 
 &lt;/figure&gt;
 
+
 &lt;p&gt;そうして出来上がったのは以下のIMPORTRANGE関数です。&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;=IMPORTRANGE(&amp;ldquo;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&amp;rdquo;,&amp;ldquo;2021/1月!B4:B35&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;親元となる&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214&#34;&gt;個人日程調整テンプレ&lt;/a&gt;を修正するだけで子の日程調整表がすべて同期されるので、個人的にはおすすめのやり方です。&lt;br&gt;
+
+&lt;p&gt;親元となる&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214&#34;&gt;個人日程調整テンプレ&lt;/a&gt;を修正するだけで子の日程調整表がすべて同期されるので、個人的にはおすすめのやり方です。&lt;br /&gt;
 ぜひ、この記事を読んでいただいた方は試してみてください！&lt;/p&gt;
 </description>
     </item>
@@ -178,20 +219,22 @@
       <link>https://eda3.dev/4/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/4/</guid>
-      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br&gt;
-また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br&gt;
+      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br /&gt;
+また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br /&gt;
 以下、例を示す。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;$user=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにユーザID&amp;#34;&lt;/span&gt;
-$password=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシのパスワード&amp;#34;&lt;/span&gt;
-$server=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシサーバアドレス&amp;#34;&lt;/span&gt;
 
-$env:HTTP_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt;
-$env:HTTPS_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;$user=&amp;quot;ここにユーザID&amp;quot;
+$password=&amp;quot;ここにプロキシのパスワード&amp;quot;
+$server=&amp;quot;ここにプロキシサーバアドレス&amp;quot;
 
-&lt;span style=&#34;color:#75715e&#34;&gt;# pyperclip, seleniumをpip installする場合&lt;/span&gt;
-python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt; install --user pyperclip
-python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://${user}:${password}@${server}:80&amp;#34;&lt;/span&gt; install --user selenium
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+$env:HTTP_PROXY=&amp;quot;http://${user}:${password}@${server}:80&amp;quot;
+$env:HTTPS_PROXY=&amp;quot;https://${user}:${password}@${server}:80&amp;quot;
+
+# pyperclip, seleniumをpip installする場合
+python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user pyperclip
+python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user selenium
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     <item>
       <title>【Mac】HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
@@ -199,18 +242,27 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/3/</guid>
       <description>&lt;p&gt;タイトルどおり&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mas install &lt;span style=&#34;color:#ae81ff&#34;&gt;539883307&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# LINE&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;masが入っていないいない場合はまずそっちから入れる&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ brew install mas
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ mas install 539883307 # LINE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;masが入っていないいない場合はまずそっちから入れる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ brew install mas
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     <item>
       <title>【Yearly】今年一年SNSに共有した記事一覧</title>
       <link>https://eda3.dev/2/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0900</pubDate>
       <guid>https://eda3.dev/2/</guid>
-      <description>&lt;p&gt;自分はよくネットで見かけた良さそうな記事をSNSに共有するんですけど、今回2019年に共有した記事の一覧をカテゴリ別にわけました。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;自分はよくネットで見かけた良さそうな記事をSNSに共有するんですけど、今回2019年に共有した記事の一覧をカテゴリ別にわけました。&lt;/p&gt;
+
 &lt;h1 id=&#34;目次&#34;&gt;目次&lt;/h1&gt;
+
 &lt;ol&gt;
 &lt;li&gt;おもしろ&lt;/li&gt;
 &lt;li&gt;Python&lt;/li&gt;
@@ -251,314 +303,623 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://
 &lt;li&gt;料理&lt;/li&gt;
 &lt;li&gt;その他&lt;/li&gt;
 &lt;/ol&gt;
+
 &lt;h2 id=&#34;おもしろ&#34;&gt;おもしろ&lt;/h2&gt;
+
 &lt;p&gt;さよなら本番サーバー - Qiita -   &lt;a href=&#34;https://qiita.com/dala00/items/bc03f6522dd20969f481&#34;&gt;https://qiita.com/dala00/items/bc03f6522dd20969f481&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;crontab database ～君がしでかしてくれたもの～ - Qiita -  &lt;a href=&#34;https://qiita.com/raki/items/8aab477b4d64c7e7610e&#34;&gt;https://qiita.com/raki/items/8aab477b4d64c7e7610e&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;10万冊近いマンガのタイトルから巻数を取得する関数、巻数関数を作ったら思ったよりかなり大変だった話 - Qiita -  &lt;a href=&#34;https://qiita.com/binnmti/items/84d48766f5068ec8d06b&#34;&gt;https://qiita.com/binnmti/items/84d48766f5068ec8d06b&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;神絵師JKとOL腐女子 - さと / 第1話　私の目の前には一人の神様がいた -  &lt;a href=&#34;https://viewer.heros-web.com/episode/10834108156641210811&#34;&gt;https://viewer.heros-web.com/episode/10834108156641210811&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;解析不能！30年以上前のレトロゲームから謎の「自動生成アルゴリズム」が見つかる | ナゾロジー -  &lt;a href=&#34;https://nazology.net/archives/45495&#34;&gt;https://nazology.net/archives/45495&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;愛猫を見守る首輪型デバイス「Catlog」が⼀般販売を開始&amp;ndash;クロネコヤマトがお届け - CNET Japan -  &lt;a href=&#34;https://japan.cnet.com/article/35142914/&#34;&gt;https://japan.cnet.com/article/35142914/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【#村上春樹で語る育児 というタグが楽しくてじっくり読んでしまう - Togetter】  &lt;a href=&#34;https://togetter.com/li/1396796&#34;&gt;https://togetter.com/li/1396796&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;語彙を殺した百人一首　by　パマ -  &lt;a href=&#34;https://www.evernote.com/shard/s731/client/snv?noteGuid=73f4fffd-44a4-49ee-ab05-87b50ac7c49f&amp;amp;noteKey=d1fb906093ee01c60ee71ed5f5f085b3&amp;amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs731%2Fsh%2F73f4fffd-44a4-49ee-ab05-87b50ac7c49f%2Fd1fb906093ee01c60ee71ed5f5&#34;&gt;https://www.evernote.com/shard/s731/client/snv?noteGuid=73f4fffd-44a4-49ee-ab05-87b50ac7c49f&amp;amp;noteKey=d1fb906093ee01c60ee71ed5f5f085b3&amp;amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs731%2Fsh%2F73f4fffd-44a4-49ee-ab05-87b50ac7c49f%2Fd1fb906093ee01c60ee71ed5f5&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ミル貝のさばき方を魚屋さんに習う :: デイリーポータルZ -  &lt;a href=&#34;https://dailyportalz.jp/kiji/let_us_talk_about_shellfish&#34;&gt;https://dailyportalz.jp/kiji/let_us_talk_about_shellfish&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;狼の赤ちゃんの初めての遠吠えが可愛すぎて30分ぐらいずっと観てた  &lt;a href=&#34;http://karapaia.com/archives/52275096.html&#34;&gt;http://karapaia.com/archives/52275096.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;集合写真らしさをずらしていくと途中にヤバい写真が現れる :: デイリーポータルZ -  &lt;a href=&#34;https://dailyportalz.jp/kiji/shugou-shashin_yabai&#34;&gt;https://dailyportalz.jp/kiji/shugou-shashin_yabai&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;今、クッキークリッカーがすごいことになっている -  &lt;a href=&#34;https://nuwton.com/game/39884/&#34;&gt;https://nuwton.com/game/39884/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Ubisoftが『Assassin’s Creed Unity』PC版を期間限定で無料配布。ノートルダム大聖堂の再建のための6320万円寄付発表とともに | AUTOMATON】  &lt;a href=&#34;https://automaton-media.com/articles/newsjp/20190418-90111/&#34;&gt;https://automaton-media.com/articles/newsjp/20190418-90111/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;アザラシの赤ちゃん　食べて寝て成長中　伊豆・三津シーパラダイス - 毎日新聞 -  &lt;a href=&#34;https://mainichi.jp/articles/20190330/k00/00m/040/180000c&#34;&gt;https://mainichi.jp/articles/20190330/k00/00m/040/180000c&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;あるオタクの多くは高度に抽象化されたこの図が何を表しているのか分かるしこれを考えた奴のヤバさも分かる - Togetter -  &lt;a href=&#34;https://togetter.com/li/1332549&#34;&gt;https://togetter.com/li/1332549&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【工作】喫茶店で水をかけられるアレを防ぐために、一瞬で壁を錬成できる机を作った | オモコロ -  &lt;a href=&#34;https://omocoro.jp/kiji/168326/&#34;&gt;https://omocoro.jp/kiji/168326/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;仕事帰りに伏見稲荷登ったマンガがあるあるすぎる展開で笑ってしまう→詳しい人達からのアドバイスやネタバレ「山頂まで登って見ることのできる看板がこれ」 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1328844&#34;&gt;https://togetter.com/li/1328844&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://sfvac.jp/&#34;&gt;https://sfvac.jp/&lt;/a&gt;  &lt;a href=&#34;https://sfvac.jp/&#34;&gt;https://sfvac.jp/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;血便が出てるのに病院に行かなかったら大変なことになった話「説明がしっかりしている」「つらさが伝わる」 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1327002&#34;&gt;https://togetter.com/li/1327002&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;『バイオハザード RE:2』のタイラントを「きかんしゃトーマス」に置き換えるMod登場。汽笛と共に迫る恐怖 | AUTOMATON -  &lt;a href=&#34;https://automaton-media.com/articles/newsjp/20190303-86456/&#34;&gt;https://automaton-media.com/articles/newsjp/20190303-86456/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【聖書ってなろうのパクりじゃん】  &lt;a href=&#34;https://anond.hatelabo.jp/20190226033629&#34;&gt;https://anond.hatelabo.jp/20190226033629&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【ベトナム戦争帰りの元軍人おじいちゃんゲーマー話題に。66歳が『Apex Legends』でノースコープ3連ショットを決める】  &lt;a href=&#34;http://news.denfaminicogamer.jp/news/190219d&#34;&gt;http://news.denfaminicogamer.jp/news/190219d&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【もし『蜘蛛の糸』のお釈迦様が光ファイバーケーブルを降ろしたら - わたしのネット】  &lt;a href=&#34;https://flets.hikakunet.jp/news/31522.html&#34;&gt;https://flets.hikakunet.jp/news/31522.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;シン・ゴジラ第2形態「蒲田くん」がケチャップ用ノズルになって登場 - GIGAZINE -  &lt;a href=&#34;https://gigazine.net/news/20190210-shin-godzilla-ketchup-wf2019w/&#34;&gt;https://gigazine.net/news/20190210-shin-godzilla-ketchup-wf2019w/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「サケ」と「シャケ」と「サーモン」の違いって何？ -  &lt;a href=&#34;http://www.overseasworking20s.work/entry/Salmon-sake-shake&#34;&gt;http://www.overseasworking20s.work/entry/Salmon-sake-shake&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;見える子ちゃん -  &lt;a href=&#34;https://comic-walker.com/contents/detail/KDCW_MF00000090010000_68/&#34;&gt;https://comic-walker.com/contents/detail/KDCW_MF00000090010000_68/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;和尚「You&amp;rsquo;re埋葬ｗｗｗ葬ｗｗｗｗｗいつもｗｗｗｗ」 : 暇人＼(^o^)／速報 -  &lt;a href=&#34;http://himasoku.com/archives/51704939.html&#34;&gt;http://himasoku.com/archives/51704939.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【漫画】いらない能力がある子の話＃うちのクラスの女子がヤバい「みんながみんな可愛くてヤバい」 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1312817&#34;&gt;https://togetter.com/li/1312817&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;John Cage - 4&#39; 33&#39;&#39; Death Metal Cover by Dead Territory -  &lt;a href=&#34;https://youtu.be/kGEG4JiOqew&#34;&gt;https://youtu.be/kGEG4JiOqew&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;John Cage - 4&amp;rsquo; 33&amp;rdquo; Death Metal Cover by Dead Territory -  &lt;a href=&#34;https://youtu.be/kGEG4JiOqew&#34;&gt;https://youtu.be/kGEG4JiOqew&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
+
 &lt;p&gt;闇の Slack 魔術に対抗する Python 防衛術 -  &lt;a href=&#34;https://tech.jxpress.net/entry/slack-dark-emoji&#34;&gt;https://tech.jxpress.net/entry/slack-dark-emoji&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Python Clickユニットテスト・レシピ集 - CLIではじめるテスト駆動開発（その１） -  &lt;a href=&#34;https://tech.jxpress.net/entry/2019/12/20/162954&#34;&gt;https://tech.jxpress.net/entry/2019/12/20/162954&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;国立国会図書館APIを使いやすくするためのPythonライブラリを作成しました -  &lt;a href=&#34;https://note.com/shimakaze_soft/n/nfd4a6bf7e79d&#34;&gt;https://note.com/shimakaze_soft/n/nfd4a6bf7e79d&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;PySparkはじめました - 分散処理デビューする前にやったこと -  &lt;a href=&#34;https://tech.jxpress.net/entry/pyspark-nyumon&#34;&gt;https://tech.jxpress.net/entry/pyspark-nyumon&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;1日目：独学プログラマが語る「なぜPythonが世界を席巻しているのか？」：PyCon JP 2019 カンファレンスレポート -  &lt;a href=&#34;https://gihyo.jp/news/report/01/pyconjp2019/0001&#34;&gt;https://gihyo.jp/news/report/01/pyconjp2019/0001&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Python 3.8 の概要 (その2) - Positional-only parameters -  &lt;a href=&#34;https://atsuoishimoto.hatenablog.com/entry/2019/09/06/115651&#34;&gt;https://atsuoishimoto.hatenablog.com/entry/2019/09/06/115651&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Python】Pythonエンジニア認定基礎試験に合格しました - みけをの日記 -  &lt;a href=&#34;https://mikewo.hatenablog.com/entry/2019/08/15/202719&#34;&gt;https://mikewo.hatenablog.com/entry/2019/08/15/202719&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「Python」人気はピークを迎えてしまうのか&amp;ndash;制約が成長を鈍らす可能性 - TechRepublic Japan -  &lt;a href=&#34;https://japan.techrepublic.com/article/35141279.htm&#34;&gt;https://japan.techrepublic.com/article/35141279.htm&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Python 2系終了のタイムリミット迫る。早く「3系」に切り替えよう -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1906/27/news016.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1906/27/news016.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Pythonとはなんなのか？ -  &lt;a href=&#34;https://www.slideshare.net/shibats/python-144921719&#34;&gt;https://www.slideshare.net/shibats/python-144921719&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Python】もうprintデバッグはいらない / PySnoozerで楽々デバッキング -  &lt;a href=&#34;http://bit.ly/2WhljiJ&#34;&gt;http://bit.ly/2WhljiJ&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;入門系記事にはない、実践/現場のPythonスクレイピング流儀【2019年最新】 - Qiita -  &lt;a href=&#34;https://qiita.com/ryuta69/items/c84501993635c72540a7&#34;&gt;https://qiita.com/ryuta69/items/c84501993635c72540a7&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Learning programming languages for free: GitHub&amp;rsquo;s best guides for Python developers - TechRepublic -  &lt;a href=&#34;https://www.techrepublic.com/article/learning-programming-languages-for-free-githubs-best-guides-for-python-developers/&#34;&gt;https://www.techrepublic.com/article/learning-programming-languages-for-free-githubs-best-guides-for-python-developers/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;習得したい言語で1位のPython、人気沸騰の理由 | 日経 xTECH（クロステック） -  &lt;a href=&#34;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00628/030400001/&#34;&gt;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00628/030400001/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Python.jp Discordサーバ雑感】  &lt;a href=&#34;https://atsuoishimoto.hatenablog.com/entry/2019/03/06/112204&#34;&gt;https://atsuoishimoto.hatenablog.com/entry/2019/03/06/112204&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Python】さようなら仮想環境？ - Qiita -  &lt;a href=&#34;https://qiita.com/tamago324/items/a224fd63d1fed2938792&#34;&gt;https://qiita.com/tamago324/items/a224fd63d1fed2938792&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Pythonの組み込み関数69個を制覇する 第1回 a～b - Qiita -  &lt;a href=&#34;https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1&#34;&gt;https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;エンジニア&#34;&gt;エンジニア&lt;/h2&gt;
+
 &lt;p&gt;プログラマーを30年間やってきた経験から学んだことまとめ - GIGAZINE -  &lt;a href=&#34;https://gigazine.net/news/20190621-things-i-learnt-the-hard-way/&#34;&gt;https://gigazine.net/news/20190621-things-i-learnt-the-hard-way/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「コードを書き続けたい」は悪いことじゃない――“生涯技術を極めていきたい”エンジニアにLINE CTO 朴イビンが送るメッセージ - エンジニアtype | 転職type -  &lt;a href=&#34;https://type.jp/et/feature/10611&#34;&gt;https://type.jp/et/feature/10611&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【エンジニアが何か問題にぶつかったときにあるといい力を5個】  &lt;a href=&#34;https://bufferings.hatenablog.com/entry/2019/03/31/005750&#34;&gt;https://bufferings.hatenablog.com/entry/2019/03/31/005750&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ビル・ゲイツを5分で動かした男、中島聡の“生き様”と“思考”に隠された超AI時代の生き方 -  &lt;a href=&#34;https://ledge.ai/ss-nakajima-1/&#34;&gt;https://ledge.ai/ss-nakajima-1/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;気をつけよう：プログラミングのキャリアの話 – 前編 | POSTD -  &lt;a href=&#34;https://postd.cc/warning-your-programming-career-2/&#34;&gt;https://postd.cc/warning-your-programming-career-2/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;初心者ITエンジニアにオススメの学習方法・挫折＆躓き防止法まとめ - INODEVLOG -  &lt;a href=&#34;https://www.inodev.jp/entry/2019/02/17/184138&#34;&gt;https://www.inodev.jp/entry/2019/02/17/184138&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;元ホストだけど、意外とサクッとエンジニアになれた話｜元ホストのエンジニア＠好奇心に全振り｜note -  &lt;a href=&#34;https://note.mu/myhobby/n/nfd86c054b001&#34;&gt;https://note.mu/myhobby/n/nfd86c054b001&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;エンジニアが長くコードを書き続けるために必要な審美眼 -  &lt;a href=&#34;https://advanced.massmedian.co.jp/article/detail/id=499&#34;&gt;https://advanced.massmedian.co.jp/article/detail/id=499&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;フロントエンドに飽きたフロントエンドエンジニアがはじめた仕事と趣味の間の話 | 東京上野のWeb制作会社LIG -  &lt;a href=&#34;https://liginc.co.jp/446196&#34;&gt;https://liginc.co.jp/446196&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「決意する」は無意味。習慣を根付かせるのは「動くと、勝手やれる」ような動線とインフラの整備 -  &lt;a href=&#34;https://blog.tinect.jp/?p=55717&#34;&gt;https://blog.tinect.jp/?p=55717&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;すべてのプログラマーが試すべき挑戦的なプロジェクト -  &lt;a href=&#34;https://okuranagaimo.blogspot.com/2019/12/blog-post_20.html&#34;&gt;https://okuranagaimo.blogspot.com/2019/12/blog-post_20.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;最終回　今生きるプログラマーが，この仕事をあこがれのものにする：at the front―前線にて  &lt;a href=&#34;https://gihyo.jp/dev/serial/01/at-the-front/0006&#34;&gt;https://gihyo.jp/dev/serial/01/at-the-front/0006&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【ラバーダック・デバッグとは問題解決手法である | ライフハッカー［日本版］】  &lt;a href=&#34;https://www.lifehacker.jp/2019/10/solve-your-own-problems-with-the-rubber-duck-trick.html&#34;&gt;https://www.lifehacker.jp/2019/10/solve-your-own-problems-with-the-rubber-duck-trick.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;finalを付けるのをやめてみた - 日々常々 -  &lt;a href=&#34;https://irof.hateblo.jp/entry/2019/09/27/233547&#34;&gt;https://irof.hateblo.jp/entry/2019/09/27/233547&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;プログラマーが本当に支持するプログラミング言語がわかる「人気の高いプログラミング言語2019」が発表 - GIGAZINE -  &lt;a href=&#34;https://gigazine.net/news/20190910-top-programming-languages-2019/&#34;&gt;https://gigazine.net/news/20190910-top-programming-languages-2019/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;プログラマの採用面接で聞かれる、データ構造とアルゴリズムに関する50以上の質問 | POSTD -  &lt;a href=&#34;https://postd.cc/50-data-structure-and-algorithms-interview-questions-for-programmers/&#34;&gt;https://postd.cc/50-data-structure-and-algorithms-interview-questions-for-programmers/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ソフト&#34;&gt;ソフト&lt;/h2&gt;
+
 &lt;p&gt;Native Instruments、本格的なDJソフトウェア「TRAKTOR DJ 2」の無償配布を開始…… Mac／Windows／iPadに対応 - ICON -  &lt;a href=&#34;https://icon.jp/archives/17313&#34;&gt;https://icon.jp/archives/17313&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;グーグル、コーディング知識なしでゲームを作れる「Game Builder」を発表 - CNET Japan -  &lt;a href=&#34;https://japan.cnet.com/article/35138484/&#34;&gt;https://japan.cnet.com/article/35138484/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;1秒で予定をチェックできる「Calendar Notify」 - ケータイ Watch -  &lt;a href=&#34;https://www.google.com/amp/s/k-tai.watch.impress.co.jp/docs/column/teppan/1112/726/amp.index.html&#34;&gt;https://www.google.com/amp/s/k-tai.watch.impress.co.jp/docs/column/teppan/1112/726/amp.index.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;App Storeにある書評アプリを全部試した私が、オススメする書評アプリ -  &lt;a href=&#34;https://anond.hatelabo.jp/20170815201023&#34;&gt;https://anond.hatelabo.jp/20170815201023&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【SNS機能付き！気になるあの人が読んだ記事も読めちゃうRSSリーダー『NEIGHBORS』 | Hacktsu】  &lt;a href=&#34;http://hacktsu.com/service/other-services/18160/&#34;&gt;http://hacktsu.com/service/other-services/18160/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【「Audio Switcher」を使ってみた：既定の再生・録音デバイスをホットキーで簡単切り替え | 忘れ荘】  &lt;a href=&#34;http://wasure.net/audioswitcher/&#34;&gt;http://wasure.net/audioswitcher/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【更新終了】Googleの新ゲームサービス｢Stadia｣まとめ：これは歴史に残るぞ | ギズモード・ジャパン -  &lt;a href=&#34;https://www.gizmodo.jp/2019/03/google-stadia-unveil-summary.html&#34;&gt;https://www.gizmodo.jp/2019/03/google-stadia-unveil-summary.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Googleがゲームプラットフォーム「STADIA」正式発表。YouTubeで視聴中の『アサクリ』を5秒でブラウザにて起動、スマホやテレビへ中断無しで切り替え可能 -  &lt;a href=&#34;https://news.denfaminicogamer.jp/news/190320a&#34;&gt;https://news.denfaminicogamer.jp/news/190320a&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;半径300メートルのIT：ファイル共有サービスの“漏えいリスク”を消し飛ばす？　Mozillaがひっそり公開した「Firefox Send」に驚いた (1/2) -  &lt;a href=&#34;https://www.itmedia.co.jp/enterprise/articles/1903/19/news041.html&#34;&gt;https://www.itmedia.co.jp/enterprise/articles/1903/19/news041.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;半径300メートルのIT：ファイル共有サービスの“漏えいリスク”を消し飛ばす？　Mozillaがひっそり公開した「Firefox Send」に驚いた (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;) -  &lt;a href=&#34;https://www.itmedia.co.jp/enterprise/articles/1903/19/news041.html&#34;&gt;https://www.itmedia.co.jp/enterprise/articles/1903/19/news041.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;落書きをリアルな風景写真にリアルタイムで変換できる驚異的なお絵かき技術「GauGAN」をNVIDIAが発表 - ライブドアニュース -  &lt;a href=&#34;http://news.livedoor.com/lite/article_detail/16183116/&#34;&gt;http://news.livedoor.com/lite/article_detail/16183116/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;macOSのメニューバーに並ぶアイコンのカオス化を解決！アイコンが大量でもすっきりさせる無料アプリ -  &lt;a href=&#34;https://coliss.com/articles/software/hide-menu-bar-icons-for-macos.html&#34;&gt;https://coliss.com/articles/software/hide-menu-bar-icons-for-macos.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Togglのログ(行動履歴)をGoogleカレンダーに予定の実績値として同期する【Zapier連携】  &lt;a href=&#34;https://www.wanabe.net/entry/toggl-to-google-calendar&#34;&gt;https://www.wanabe.net/entry/toggl-to-google-calendar&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【ソースコードを分析し、コードの構造や階層・依存関係を可視化する便利な無料ツール -Code Crumbs | コリス】  &lt;a href=&#34;https://coliss.com/articles/build-websites/operation/javascript/code-visual-representation-codecrumbs.html&#34;&gt;https://coliss.com/articles/build-websites/operation/javascript/code-visual-representation-codecrumbs.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;もうひとつのGUI diffツール「Beyond Compare 4」 -  &lt;a href=&#34;https://techracho.bpsinc.jp/hachi8833/2019_01_30/68327&#34;&gt;https://techracho.bpsinc.jp/hachi8833/2019_01_30/68327&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【Microsoft、新しいターミナルアプリ「Windows Terminal」を発表 - 窓の杜】  &lt;a href=&#34;https://forest.watch.impress.co.jp/docs/news/1183011.html&#34;&gt;https://forest.watch.impress.co.jp/docs/news/1183011.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;webサービス&#34;&gt;Webサービス&lt;/h2&gt;
+
 &lt;p&gt;新規Webサービスを独りで開発・運用する際に立ちはだかった壁とそれを乗り越えた方法まとめ【個人開発】  &lt;a href=&#34;https://qiita.com/cdms/items/08c145aac0dd10ea8cbc&#34;&gt;https://qiita.com/cdms/items/08c145aac0dd10ea8cbc&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;インフラの知識不要！GitからインポートしてWebサイトが構築できる「Render」 -  &lt;a href=&#34;https://itnews.org/news_contents/product-render&#34;&gt;https://itnews.org/news_contents/product-render&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;mocri（もくり） ふらっと集まれる作業通話アプリ -  &lt;a href=&#34;https://mocri.jp/&#34;&gt;https://mocri.jp/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Grow with Google：Googleのノウハウを無料で学べるってすごい | ギズモード・ジャパン -  &lt;a href=&#34;https://www.gizmodo.jp/2019/04/grow-with-google.html&#34;&gt;https://www.gizmodo.jp/2019/04/grow-with-google.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【「Feed Rinse」でRSSフィードから特定のキーワードでフィルタリングした記事を取得・除外する】  &lt;a href=&#34;http://wasure.net/feedrinse/&#34;&gt;http://wasure.net/feedrinse/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;国会図書館の書誌データ、利用目的かかわらず誰でも無償で利用可能に　4月1日から - ねとらぼ -  &lt;a href=&#34;https://nlab.itmedia.co.jp/nl/articles/1902/20/news138.html&#34;&gt;https://nlab.itmedia.co.jp/nl/articles/1902/20/news138.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;GitHubが大変身！Web開発向けの万能ツールに変えてくれるサービスをまとめてみた！ - paiza開発日誌 -  &lt;a href=&#34;https://paiza.hatenablog.com/entry/2019/03/13/GitHub%E3%81%8C%E5%A4%A7%E5%A4%89%E8%BA%AB%EF%BC%81Web%E9%96%8B%E7%99%BA%E5%90%91%E3%81%91%E3%81%AE%E4%B8%87%E8%83%BD%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AB%E5%A4%89%E3%81%88%E3%81%A6%E3%81%8F%E3%82%8C&#34;&gt;https://paiza.hatenablog.com/entry/2019/03/13/GitHub%E3%81%8C%E5%A4%A7%E5%A4%89%E8%BA%AB%EF%BC%81Web%E9%96%8B%E7%99%BA%E5%90%91%E3%81%91%E3%81%AE%E4%B8%87%E8%83%BD%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AB%E5%A4%89%E3%81%88%E3%81%A6%E3%81%8F%E3%82%8C&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Webサービスを独学で開発するときに役に立つWebサイト・フレームワークまとめ - ムカデノワラジ -  &lt;a href=&#34;https://xhateblo.hatenablog.com/entry/recommends/development/websites&#34;&gt;https://xhateblo.hatenablog.com/entry/recommends/development/websites&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;人工知能もついにココまで！写真やイラストが健全か、健全でないのか判定できるJavaScriptライブラリ -NSFW JS | コリス -  &lt;a href=&#34;https://coliss.com/articles/build-websites/operation/javascript/indecent-content-checking-nsfwjs.html&#34;&gt;https://coliss.com/articles/build-websites/operation/javascript/indecent-content-checking-nsfwjs.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【公式】あなたの名前を「レッド・ツェッペリン・フォント」で表示する画像作成ジェネレイター＆プレイリスト・ジェネレイター公開 - amass -  &lt;a href=&#34;http://amass.jp/117389/&#34;&gt;http://amass.jp/117389/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;働き方&#34;&gt;働き方&lt;/h2&gt;
+
 &lt;p&gt;ミスが全くない仕事を目標にすると、ミスが報告されなくなる『測りすぎ』 -  &lt;a href=&#34;http://dain.cocolog-nifty.com/myblog/2019/09/post-f6f8b8.html&#34;&gt;http://dain.cocolog-nifty.com/myblog/2019/09/post-f6f8b8.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;人事部『人員不足って言うけど現場回ってるじゃん』→今いる人たちで無理しながら回すのではなく定時で帰り『回りませんでした』と言わないと解決しない - Togetter -  &lt;a href=&#34;https://togetter.com/li/1402202&#34;&gt;https://togetter.com/li/1402202&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Google エンジニアリング・プラクティス ドキュメント | eng-practices -  &lt;a href=&#34;https://shuuji3.github.io/eng-practices/&#34;&gt;https://shuuji3.github.io/eng-practices/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;2019年のエンジニア新人研修の講義資料を公開しました - Cybozu Inside O -  &lt;a href=&#34;https://blog.cybozu.io/entry/2019/09/05/080000&#34;&gt;https://blog.cybozu.io/entry/2019/09/05/080000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「なんで？」と聞くと“責められている”と感じて言い訳したり嘘をついたりetc.してしまう人にはこう返すと良いかもしれない - Togetter -  &lt;a href=&#34;https://togetter.com/li/1393168&#34;&gt;https://togetter.com/li/1393168&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ソフトウェアエンジニアのかけ声｜note -  &lt;a href=&#34;https://note.mu/k2wanko/n/n4a4accd2f77c&#34;&gt;https://note.mu/k2wanko/n/n4a4accd2f77c&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;午前10時前の就業開始は拷問に等しく、従業員を病気にする（英研究） : カラパイア -  &lt;a href=&#34;http://karapaia.com/archives/52200673.html&#34;&gt;http://karapaia.com/archives/52200673.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;iPadOSを5日間使用して見つけた、仕事の効率を高める4つの機能 -  &lt;a href=&#34;https://japanese.engadget.com/2019/06/29/ipados-5-4/&#34;&gt;https://japanese.engadget.com/2019/06/29/ipados-5-4/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;リモートワークがもたらした「個人開発で食う」という道と、そこに至るまでの戦略 -  &lt;a href=&#34;https://www.nice2meet.us/how-to-grow-as-a-professional-engineer-working-remotely&#34;&gt;https://www.nice2meet.us/how-to-grow-as-a-professional-engineer-working-remotely&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;機械学習&#34;&gt;機械学習&lt;/h2&gt;
-&lt;p&gt;第3回　ディープラーニング最速入門 ― 仕組み理解×初実装（後編） (1/3) -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1912/16/news026.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1912/16/news026.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;第3回　ディープラーニング最速入門 ― 仕組み理解×初実装（後編） (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt;) -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1912/16/news026.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1912/16/news026.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;高精度でテキスト分類を行えるAIの環境を用意しました【BERT】 -  &lt;a href=&#34;https://blog.takuya-andou.com/entry/bert&#34;&gt;https://blog.takuya-andou.com/entry/bert&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;AIが100万種類以上を描く。世界最大の顔イラスト提供サービス「彩ちゃん（SAI）」を9月10日より提供開始 -  &lt;a href=&#34;https://prtimes.jp/main/html/rd/p/000000001.000042049.html&#34;&gt;https://prtimes.jp/main/html/rd/p/000000001.000042049.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;動画嫌いもハマるBuzzVideoそこにはAIのチカラがあった - hiroseki&amp;rsquo;s blog -  &lt;a href=&#34;https://www.hirosekis.com/entry/2019/08/03/112904&#34;&gt;https://www.hirosekis.com/entry/2019/08/03/112904&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ディープラーニングを使って五等分の花嫁の将来の嫁を予測する - Qiita -  &lt;a href=&#34;https://qiita.com/yoyoyo_/items/a30332833ce45c84fafd&#34;&gt;https://qiita.com/yoyoyo_/items/a30332833ce45c84fafd&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【深層学習で別人ボーカル　クリプトンの新技術はバ美肉にも使える？】  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1903/05/news117.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1903/05/news117.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;機械学習の数理: 学部の講義で出した100問の演習課題 | Joe Suzuki (鈴木譲) 公式ブログ -  &lt;a href=&#34;http://joe.bayesnet.org/?p=5330&#34;&gt;http://joe.bayesnet.org/?p=5330&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;データサイエンスや機械学習のチートシートを最も効率的に収集する方法 - Qiita -  &lt;a href=&#34;https://qiita.com/stakemura/items/ad66a1d6b9ff6311fb9e&#34;&gt;https://qiita.com/stakemura/items/ad66a1d6b9ff6311fb9e&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ゲーム&#34;&gt;ゲーム&lt;/h2&gt;
+
 &lt;p&gt;「FF6」の新たなバグを発売25年後に見つけたテスト技術者の腕前 | 日経 xTECH（クロステック） -  &lt;a href=&#34;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00894/080100001/&#34;&gt;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00894/080100001/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【【VOICEROID実況】ゆかまきFlight log book 《Page1》 - ニコニコ動画】  &lt;a href=&#34;https://www.nicovideo.jp/watch/sm29408499&#34;&gt;https://www.nicovideo.jp/watch/sm29408499&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【The Witness - あなたはパズルで満たされた奇妙な島でひとり目を覚まします。】  &lt;a href=&#34;https://www.epicgames.com/store/ja/product/the-witness/home&#34;&gt;https://www.epicgames.com/store/ja/product/the-witness/home&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;【HTML5ゲームエンジンの徹底評価[日本語訳] (1) 2D・3D対応とプログラミング言語の比較 - Qiita】  &lt;a href=&#34;https://qiita.com/motoyasu-yamada/items/f4e03f98442b3ec164be&#34;&gt;https://qiita.com/motoyasu-yamada/items/f4e03f98442b3ec164be&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【HTML5ゲームエンジンの徹底評価&lt;a href=&#34;1&#34;&gt;日本語訳&lt;/a&gt; 2D・3D対応とプログラミング言語の比較 - Qiita】  &lt;a href=&#34;https://qiita.com/motoyasu-yamada/items/f4e03f98442b3ec164be&#34;&gt;https://qiita.com/motoyasu-yamada/items/f4e03f98442b3ec164be&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;City Dunk:Free style【配信日と事前登録特典】 -  &lt;a href=&#34;https://altema.jp/sinsaku/249&#34;&gt;https://altema.jp/sinsaku/249&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【田中圭一連載：逆転裁判 編】数多のピンチを乗り越え“法廷バトル”ゲームを誕生させた、巧 舟の逆転劇。「失敗から学ぶ」彼の真摯な姿勢が、“伏線”として回収された瞬間だった【若ゲのいたり】 -  &lt;a href=&#34;http://news.denfaminicogamer.jp/manga/190228&#34;&gt;http://news.denfaminicogamer.jp/manga/190228&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ほぼテキストのみのシンプルな構成で、プレイヤーの想像を掻き立てる──RPGの根源的な魅力が詰まった注目作【レビュー：ナイト・アンド・ドラゴン２ – 狂乱の時代 -】 -  &lt;a href=&#34;http://news.denfaminicogamer.jp/iphoneac/190221a&#34;&gt;http://news.denfaminicogamer.jp/iphoneac/190221a&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;『Elona』作者による新作『エリン宿』オープンアルファ版が公開。カオスな世界観や、自由な作風は健在 |  &lt;a href=&#34;https://automaton-media.com/articles/newsjp/20191016-104085/&#34;&gt;https://automaton-media.com/articles/newsjp/20191016-104085/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;名作歴史戦略ゲーム「シヴィライゼーション」を元に製作されたブラウザでサクッとプレイ可能なオープンソースのフリーゲーム「Freeciv web」 - GIGAZINE -  &lt;a href=&#34;http://bit.ly/2WdVOhY&#34;&gt;http://bit.ly/2WdVOhY&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;vr&#34;&gt;VR&lt;/h2&gt;
+
 &lt;p&gt;新作VRリズムゲームの運動量 性行為の2倍のカロリー消費 -  &lt;a href=&#34;https://www.moguravr.com/audio-trip-calorie-consumption/&#34;&gt;https://www.moguravr.com/audio-trip-calorie-consumption/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;VR乱交に参加した -  &lt;a href=&#34;https://anond.hatelabo.jp/20190910193053&#34;&gt;https://anond.hatelabo.jp/20190910193053&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;VR世界を歩けるウェアラブルロコモーションシステム「KAT loco」 - Engadget 日本版 -  &lt;a href=&#34;https://japanese.engadget.com/2019/08/11/gf103-vr-kat-loco/&#34;&gt;https://japanese.engadget.com/2019/08/11/gf103-vr-kat-loco/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;｢Amazon Prime VR｣発表。今更感あるし、本当にVRコンテンツって必要なの？ | ギズモード・ジャパン -  &lt;a href=&#34;https://www.gizmodo.jp/2019/07/amazon-prime-vr.html&#34;&gt;https://www.gizmodo.jp/2019/07/amazon-prime-vr.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;VRで視力回復する理屈をメガネ屋が解説  &lt;a href=&#34;http://natural-seeing.com/2019/03/15/post-19/&#34;&gt;http://natural-seeing.com/2019/03/15/post-19/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;音ゲーマーの超人的プレイ、Steam VRの想定を突抜。アップデートで対応へ - ライブドアニュース -  &lt;a href=&#34;http://news.livedoor.com/lite/article_detail/16014545/&#34;&gt;http://news.livedoor.com/lite/article_detail/16014545/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;マストドン&#34;&gt;マストドン&lt;/h2&gt;
+
 &lt;p&gt;マストドン、3.0.0に　さらばOStatus - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1910/04/news077.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1910/04/news077.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;notestock -  &lt;a href=&#34;https://notestock.osa-p.net/&#34;&gt;https://notestock.osa-p.net/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;増田でわかる分散SNS -  &lt;a href=&#34;https://anond.hatelabo.jp/20190612205701&#34;&gt;https://anond.hatelabo.jp/20190612205701&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;2017年にブームを起こしたマストドン 収益化は困難な状態か - ライブドアニュース -  &lt;a href=&#34;http://news.livedoor.com/lite/article_detail_amp/16407019/&#34;&gt;http://news.livedoor.com/lite/article_detail_amp/16407019/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;マストドンつまみ食い日記：friends.nicoの移住先が開拓された　第二期マストドンインスタンスは「Best Friends」 - ITmedia NEWS -  &lt;a href=&#34;http://bit.ly/2U8sdVg&#34;&gt;http://bit.ly/2U8sdVg&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;LTLとは何か？（哲学） -  &lt;a href=&#34;http://info.vocalodon.net/notes/whatisltl.html&#34;&gt;http://info.vocalodon.net/notes/whatisltl.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;メンタル&#34;&gt;メンタル&lt;/h2&gt;
+
 &lt;p&gt;【VTuber&amp;amp;YouTuber及び全人類向け・つよつよメンタルを手に入れる方法【鈴鹿詩子】 - YouTube】  &lt;a href=&#34;https://www.youtube.com/watch?v=V-eIU8_bWV8&#34;&gt;https://www.youtube.com/watch?v=V-eIU8_bWV8&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;霞が関官僚をやってた先輩をうつ病地獄からサルベージした話が壮絶 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1399375&#34;&gt;https://togetter.com/li/1399375&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;猫さんが居る整体院は待ち時間が幸せで『もう少し待ってます』と言いたくなる「メンタルも回復できる」 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1368348&#34;&gt;https://togetter.com/li/1368348&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【TestosteroneさんはTwitterを使っています: 「①精神が不安定になる ②パフォーマンスの低下(集中力が劇的に落ちる) ③免疫力の低下(病気になりやすくなる) ④体力がなくなる(疲れやすくなる) ⑤記憶力が落ちる これ全て睡眠不足が引き起こす問題です。最低6時間、できるなら8時間は眠りましょう。睡眠ほど費用対効果の高い自己投資はありません。」 / Twitter】  &lt;a href=&#34;https://twitter.com/badassceo/status/1141281829514665984&#34;&gt;https://twitter.com/badassceo/status/1141281829514665984&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;人と話すのは好きだけど疲れてしまう、空いてる時間は一人でいる方が好き。けどそう言ったら「冷たいね」と言わたことがあって悩んでいたけど、そうではないらしいということが分かった。「内向型人間」について、少し誤解してませんか？って話。&lt;/p&gt;
+
 &lt;p&gt;やる気が起きない人に告ぐ、「単語帳!?で自分に指令する続ける技術」という本を発売しました。 -  &lt;a href=&#34;https://www.200kounen-training.com/entry/2019/05/19/214521&#34;&gt;https://www.200kounen-training.com/entry/2019/05/19/214521&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;雑学&#34;&gt;雑学&lt;/h2&gt;
+
 &lt;p&gt;上の金具は荷物をかけるためではなかった…公共のトイレでドアのフックが二重になっているのは何故なのか - Togetter -  &lt;a href=&#34;https://togetter.com/li/1419812&#34;&gt;https://togetter.com/li/1419812&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;3月18日は点字ブロックの日　Google Doodleが開発者称える - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1903/18/news085.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1903/18/news085.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Google、円周率計算31兆桁達成　世界記録更新（ITmedia NEWS） - Yahoo!ニュース -  &lt;a href=&#34;https://headlines.yahoo.co.jp/hl?a=20190314-00000099-zdn_n-sci&#34;&gt;https://headlines.yahoo.co.jp/hl?a=20190314-00000099-zdn_n-sci&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;急成長したGoogleをAppleが追い抜く！　世界の企業「ブランド価値」ランキングの変化が衝撃的｜FINDERS -  &lt;a href=&#34;https://finders.me/articles.php?id=749&#34;&gt;https://finders.me/articles.php?id=749&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【「小さなことからコツコツと」のギャグが、やがて名言と至る背景理論】  &lt;a href=&#34;https://www.centeroftheearth.org/entry/2018/04/12/071400&#34;&gt;https://www.centeroftheearth.org/entry/2018/04/12/071400&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;りんごの形をした氷が木に残る自然現象「ゴースト・アップル」がめっちゃエモいし、いろいろな想像を膨らませる皆さん - Togetter -  &lt;a href=&#34;https://togetter.com/li/1317666&#34;&gt;https://togetter.com/li/1317666&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;git&#34;&gt;Git&lt;/h2&gt;
+
 &lt;p&gt;バージョン管理ツールのGitでよく使用するコマンドを1ページにまとめた便利なチートシート -GitSheet | コリス -  &lt;a href=&#34;https://coliss.com/articles/build-websites/operation/work/frequently-used-commands-in-git.html&#34;&gt;https://coliss.com/articles/build-websites/operation/work/frequently-used-commands-in-git.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;gitに新しいサブコマンドが追加された (ブランチ切り替え: switch, ファイルを戻す: restore)  &lt;a href=&#34;http://peccu.hatenablog.com/entry/2019/08/20/000000&#34;&gt;http://peccu.hatenablog.com/entry/2019/08/20/000000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;新 GitHub Actions 入門 -  &lt;a href=&#34;https://www.kaizenprogrammer.com/entry/2019/08/18/205010&#34;&gt;https://www.kaizenprogrammer.com/entry/2019/08/18/205010&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;プロジェクト管理ツール機能比較 - Qiita -  &lt;a href=&#34;https://qiita.com/iharakenji/items/19278977d1751b6cb124&#34;&gt;https://qiita.com/iharakenji/items/19278977d1751b6cb124&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【気付いたら.gitignoreはgiboで自動生成する時代になっていた - Qiita】  &lt;a href=&#34;https://qiita.com/tmknom/items/c4bcebe17d25381fa45d&#34;&gt;https://qiita.com/tmknom/items/c4bcebe17d25381fa45d&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;aws&#34;&gt;AWS&lt;/h2&gt;
+
 &lt;p&gt;［速報］AWSをオンプレミスに持ち込める「AWS Outposts」正式リリース。日本国内でも利用可能 -  &lt;a href=&#34;https://www.publickey1.jp/blog/19/awsaws_outpostsaws_reinvent_2019.html&#34;&gt;https://www.publickey1.jp/blog/19/awsaws_outpostsaws_reinvent_2019.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;16歳のうちにAWSの認定資格6冠しました -  &lt;a href=&#34;https://dev.classmethod.jp/cloud/aws/moko-aws-6kan/&#34;&gt;https://dev.classmethod.jp/cloud/aws/moko-aws-6kan/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「AWS IAMのマニアックな話」は「IAM初心者」にこそちょうどいい - Qiita -  &lt;a href=&#34;https://qiita.com/taxin/items/a6c4bb48c35c0c99d88e&#34;&gt;https://qiita.com/taxin/items/a6c4bb48c35c0c99d88e&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
+
 &lt;p&gt;Docker for Macでは定期的にdisk imageをお掃除する必要がある -  &lt;a href=&#34;https://blog.pinkumohikan.com/entry/cleanup-docker-disk-image&#34;&gt;https://blog.pinkumohikan.com/entry/cleanup-docker-disk-image&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Docker に正式統合された BuildKit の buildctl コマンドで Dockerfileを使わずにコンテナイメージをビルドするハンズオン - Qiita -  &lt;a href=&#34;https://qiita.com/po3rin/items/deb798ed9c1edac5cc4b&#34;&gt;https://qiita.com/po3rin/items/deb798ed9c1edac5cc4b&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;やわらかDocker · GitHub -  &lt;a href=&#34;https://gist.github.com/udzura/fd1d6f4e27571b1b553f16eca4597b05&#34;&gt;https://gist.github.com/udzura/fd1d6f4e27571b1b553f16eca4597b05&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;iot&#34;&gt;IoT&lt;/h2&gt;
+
 &lt;p&gt;「明日から本気出す」から脱け出そう。ボタン型IoTデバイス、時間の家計簿『kotobo』 -  &lt;a href=&#34;https://prtimes.jp/main/html/rd/p/000000317.000022027.html&#34;&gt;https://prtimes.jp/main/html/rd/p/000000317.000022027.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;ダイソーが6年でIT内製化、マイクロサービス化、サーバレスに成功した理由 (1/2)：105億レコードの処理が課題 -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1911/21/news010.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1911/21/news010.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ダイソーが6年でIT内製化、マイクロサービス化、サーバレスに成功した理由 (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;)：105億レコードの処理が課題 -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1911/21/news010.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1911/21/news010.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;どこでも人感センサー - スイッチサイエンス -  &lt;a href=&#34;https://www.switch-science.com/catalog/5408/&#34;&gt;https://www.switch-science.com/catalog/5408/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;アプリ&#34;&gt;アプリ&lt;/h2&gt;
+
 &lt;p&gt;QuickLyric -  &lt;a href=&#34;https://www.quicklyric.be/&#34;&gt;https://www.quicklyric.be/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;2018年、日本で最もインストールされたアプリは？　米Sensor Tower調査 - ITmedia NEWS -  &lt;a href=&#34;http://bit.ly/2U4KhzS&#34;&gt;http://bit.ly/2U4KhzS&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;忘却曲線を使った記憶に確実に残せるメモアプリ「reminDO」を公開しました！ - reminDO開発日記 -  &lt;a href=&#34;http://remindo.hatenablog.com/entry/2016/06/20/084519&#34;&gt;http://remindo.hatenablog.com/entry/2016/06/20/084519&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;キーボード&#34;&gt;キーボード&lt;/h2&gt;
-&lt;p&gt;東プレ、Mac向けのテンキーレスキーボード (1/1) - PC Watch -  &lt;a href=&#34;https://pc.watch.impress.co.jp/img/pcw/docs/1221/872/html/1.jpg.html&#34;&gt;https://pc.watch.impress.co.jp/img/pcw/docs/1221/872/html/1.jpg.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;第1回前編：なぜ日本で「自作キーボード」が流行り出したのか　そのきっかけを振り返る (1/2)  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1910/21/news005.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1910/21/news005.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;東プレ、Mac向けのテンキーレスキーボード (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1&lt;/sub&gt;) - PC Watch -  &lt;a href=&#34;https://pc.watch.impress.co.jp/img/pcw/docs/1221/872/html/1.jpg.html&#34;&gt;https://pc.watch.impress.co.jp/img/pcw/docs/1221/872/html/1.jpg.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;第1回前編：なぜ日本で「自作キーボード」が流行り出したのか　そのきっかけを振り返る (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;)  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1910/21/news005.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1910/21/news005.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ほぼ毎月「キーボード」を買っているプログラマーが、最高の作業環境を追い求めた結果 | マネ会 -  &lt;a href=&#34;https://hikakujoho.com/work/92360100004665&#34;&gt;https://hikakujoho.com/work/92360100004665&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;テスト&#34;&gt;テスト&lt;/h2&gt;
+
 &lt;p&gt;あなたが自動テストを行う目的は何ですか？ - Qiita -  &lt;a href=&#34;https://qiita.com/ozhiro/items/5aa95c6360a8930df325&#34;&gt;https://qiita.com/ozhiro/items/5aa95c6360a8930df325&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;質とスピード / Quality and Speed - Speaker Deck -  &lt;a href=&#34;https://speakerdeck.com/twada/quality-and-speed&#34;&gt;https://speakerdeck.com/twada/quality-and-speed&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;TDDはゆるく実践しても大丈夫 - 千里霧中 -  &lt;a href=&#34;http://goyoki.hatenablog.com/entry/2019/10/13/232806&#34;&gt;http://goyoki.hatenablog.com/entry/2019/10/13/232806&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;プログラミング&#34;&gt;プログラミング&lt;/h2&gt;
+
 &lt;p&gt;C++やPython向けのコード可視化ツール「Sourcetrail」がオープンソースに：コードを読む時間が一番長いという問題 -  &lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1911/21/news049.html&#34;&gt;https://www.atmarkit.co.jp/ait/articles/1911/21/news049.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;次世代のプログラミングツール、未来のプログラミング言語の方向性について - YAMDAS現更新履歴 -  &lt;a href=&#34;https://yamdas.hatenablog.com/entry/20190519/programmingtools&#34;&gt;https://yamdas.hatenablog.com/entry/20190519/programmingtools&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;The V Programming Language -  &lt;a href=&#34;https://vlang.io/&#34;&gt;https://vlang.io/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;筋トレ&#34;&gt;筋トレ&lt;/h2&gt;
+
 &lt;p&gt;「薬物なんて必要ありません！　筋トレしましょう！」　西川貴教が唱えた“筋トレ万能説”が大反響を呼ぶ - ねとらぼ -  &lt;a href=&#34;https://nlab.itmedia.co.jp/nl/articles/1903/14/news112.html&#34;&gt;https://nlab.itmedia.co.jp/nl/articles/1903/14/news112.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;アラサーでお腹が出てきたらダイエットよりもこんなことをやったほうがいいかも？ - Togetter -  &lt;a href=&#34;https://togetter.com/li/1322580&#34;&gt;https://togetter.com/li/1322580&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「筋トレし始めて1ヶ月。効果を実感できずモチベーションが下がってきました。どうやって続けていますか？」 - 斗比主閲子の姑日記 -  &lt;a href=&#34;https://topisyu.hatenablog.com/entry/2019/02/23/073000&#34;&gt;https://topisyu.hatenablog.com/entry/2019/02/23/073000&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ai&#34;&gt;AI&lt;/h2&gt;
+
 &lt;p&gt;【人工知能プログラミングのための数学がわかる本 | 石川 聡彦 | コンピュータサイエンス | Kindleストア | Amazon】  &lt;a href=&#34;https://www.amazon.co.jp/dp/B079TLRZ8K/ref=dp-kindle-redirect&#34;&gt;https://www.amazon.co.jp/dp/B079TLRZ8K/ref=dp-kindle-redirect&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;AIによる自動文章作成ツールがあまりにも高精度のテキストを簡単に作り出してしまうため開発陣から「危険過ぎる」と問題視される - GIGAZINE -  &lt;a href=&#34;https://gigazine.net/news/20190216-ai-fake-text-generator-dangerous-release/&#34;&gt;https://gigazine.net/news/20190216-ai-fake-text-generator-dangerous-release/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;dx&#34;&gt;DX&lt;/h2&gt;
+
 &lt;p&gt;デジタルトランスフォーメーションに成功する企業は何が違うのか 6つの戦略から評価する -  &lt;a href=&#34;https://www.dhbr.net/articles/-/6220&#34;&gt;https://www.dhbr.net/articles/-/6220&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;デジタルトランスフォーメーションを推進するためのガイドライン（DX推進ガイドライン）を取りまとめました -  &lt;a href=&#34;https://www.meti.go.jp/press/2018/12/20181212004/20181212004.html&#34;&gt;https://www.meti.go.jp/press/2018/12/20181212004/20181212004.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;go&#34;&gt;Go&lt;/h2&gt;
+
 &lt;p&gt;「例外」がないからGo言語はイケてないとかって言ってるヤツが本当にイケてない件 - Qiita -  &lt;a href=&#34;https://qiita.com/Maki-Daisuke/items/80cbc26ca43cca3de4e4&#34;&gt;https://qiita.com/Maki-Daisuke/items/80cbc26ca43cca3de4e4&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Go 1.12 is released - The Go Blog -  &lt;a href=&#34;https://blog.golang.org/go1.12&#34;&gt;https://blog.golang.org/go1.12&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;mac&#34;&gt;Mac&lt;/h2&gt;
+
 &lt;p&gt;Macのターミナルで時間のかかるコマンドが終わったら通知を受け取る方法 - Qiita -  &lt;a href=&#34;https://qiita.com/endam/items/6b2dd23ac7a6a85f7f18&#34;&gt;https://qiita.com/endam/items/6b2dd23ac7a6a85f7f18&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;次期「Mac Pro」の詳細スペック判明？Apple内部のプレゼン資料が流出か -  &lt;a href=&#34;https://iphone-mania.jp/news-247635/&#34;&gt;https://iphone-mania.jp/news-247635/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ruby&#34;&gt;Ruby&lt;/h2&gt;
+
 &lt;p&gt;Ruby3が目指すのは“3倍速”　まつもとゆきひろ氏が語る「プログラミング言語サバイバル」とRubyの未来 - Part2 - ログミーTech -  &lt;a href=&#34;https://logmi.jp/tech/articles/320752&#34;&gt;https://logmi.jp/tech/articles/320752&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;“Rubyは死んだ”のか？　まつもとゆきひろ氏が語る「プログラミング言語サバイバル」とRubyの未来 - Part1 - ログミーTech -  &lt;a href=&#34;https://logmi.jp/tech/articles/320750&#34;&gt;https://logmi.jp/tech/articles/320750&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;sf&#34;&gt;SF&lt;/h2&gt;
+
 &lt;p&gt;ＳＦマニアからビギナーまであらゆる層を満足させる、オールタイム・ベスト級の傑作ＳＦ短篇集──『なめらかな世界と、その敵』 - 基本読書 -  &lt;a href=&#34;https://huyukiitoichi.hatenadiary.jp/entry/2019/08/26/080000&#34;&gt;https://huyukiitoichi.hatenadiary.jp/entry/2019/08/26/080000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;SF史に残る（べき）ゲームたち：第24回『ゼノギアス』――ゲームというテクノロジーに接触した人類の記録 -  &lt;a href=&#34;https://jp.ign.com/sf-game-history/36070/opinion/sf24&#34;&gt;https://jp.ign.com/sf-game-history/36070/opinion/sf24&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;slack&#34;&gt;Slack&lt;/h2&gt;
+
 &lt;p&gt;社内slackにVIPチャンネルを作った話 - Qiita -  &lt;a href=&#34;https://qiita.com/peisuke/items/80984db8b47cd8243019&#34;&gt;https://qiita.com/peisuke/items/80984db8b47cd8243019&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Slack、新機能「ワークフロービルダー」を年末までに提供開始、Office 365/G Suiteとの統合機能や検索機能などの拡張も発表【Slack Frontiers】 -  &lt;a href=&#34;http://bit.ly/2DyRJh9&#34;&gt;http://bit.ly/2DyRJh9&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;vim&#34;&gt;Vim&lt;/h2&gt;
+
 &lt;p&gt;Vim で縦方向 f 移動を実現した - Qiita -  &lt;a href=&#34;https://qiita.com/monaqa/items/9764e957523ad0b56aec&#34;&gt;https://qiita.com/monaqa/items/9764e957523ad0b56aec&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;プラグインなしでvimを(比較的)気持ちよく使うvimrc - Qiita -  &lt;a href=&#34;https://qiita.com/ryuichi1208/items/93fed5fca8bb7a86640e&#34;&gt;https://qiita.com/ryuichi1208/items/93fed5fca8bb7a86640e&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;アニメ&#34;&gt;アニメ&lt;/h2&gt;
+
 &lt;p&gt;「まちカドまぞく」全12話一挙放送 - ニコニコ生放送 -  &lt;a href=&#34;https://sp.live.nicovideo.jp/watch/lv323287683&#34;&gt;https://sp.live.nicovideo.jp/watch/lv323287683&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;2019年春開始の新作アニメ一覧 - GIGAZINE -  &lt;a href=&#34;https://gigazine.net/news/20190317-anime-2019spring/&#34;&gt;https://gigazine.net/news/20190317-anime-2019spring/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;インフラ&#34;&gt;インフラ&lt;/h2&gt;
+
 &lt;p&gt;「Pulumi」がバージョン1.0に到達、正式版に。インフラの状態をJavaScript、Python、Goなどで記述可能。個人向けサービスは無料で提供 － Publickey -  &lt;a href=&#34;https://www.publickey1.jp/blog/19/pulumi10javascriptpythongo.html&#34;&gt;https://www.publickey1.jp/blog/19/pulumi10javascriptpythongo.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Ubuntuで簡単ファイルサーバー（NAS）構築 | パソコン工房 NEXMAG -  &lt;a href=&#34;https://www.pc-koubou.jp/magazine/10062&#34;&gt;https://www.pc-koubou.jp/magazine/10062&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;vscode&#34;&gt;VSCode&lt;/h2&gt;
+
 &lt;p&gt;Visual Studio CodeがPython対応強化。Jupyter Notebooksネイティブ編集、Pythonファイルの直接実行など -  &lt;a href=&#34;https://www.publickey1.jp/blog/19/visual_studio_codepythonjupyter_notebookspython.html&#34;&gt;https://www.publickey1.jp/blog/19/visual_studio_codepythonjupyter_notebookspython.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Visual Studio Codeのうれしい機能を使いこなして、初心者を最速で脱出する！《VScode実践入門》 -  &lt;a href=&#34;https://employment.en-japan.com/engineerhub/entry/2019/06/21/103000&#34;&gt;https://employment.en-japan.com/engineerhub/entry/2019/06/21/103000&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ガジェット&#34;&gt;ガジェット&lt;/h2&gt;
+
 &lt;p&gt;どこでも指の動きだけで文字をタイプできる、指輪型ウェアラブルキーボード｢TAP｣ | ギズモード・ジャパン -  &lt;a href=&#34;https://www.gizmodo.jp/2019/08/ring-type-wearable-keyboard-tap.html&#34;&gt;https://www.gizmodo.jp/2019/08/ring-type-wearable-keyboard-tap.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【新製品】半永久的に使える未来のスマートノートにミニサイズが登場｜ -  &lt;a href=&#34;http://www.buntobi.com/articles/entry/news/008581/&#34;&gt;http://www.buntobi.com/articles/entry/news/008581/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;シェルスクリプト&#34;&gt;シェルスクリプト&lt;/h2&gt;
+
 &lt;p&gt;シェルスクリプトの Lint ツール「shellcheck」を使ってみた -  &lt;a href=&#34;http://neos21.hatenablog.com/entry/2019/11/21/080000&#34;&gt;http://neos21.hatenablog.com/entry/2019/11/21/080000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Bashのよくある間違い  &lt;a href=&#34;https://yakst.com/ja/posts/2929&#34;&gt;https://yakst.com/ja/posts/2929&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ツール&#34;&gt;ツール&lt;/h2&gt;
+
 &lt;p&gt;全ての開発者に知って欲しい5つの業務効率化ツール - Qiita -  &lt;a href=&#34;https://qiita.com/baby-degu/items/2c194fb05049d3b1a7f9&#34;&gt;https://qiita.com/baby-degu/items/2c194fb05049d3b1a7f9&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Amazonのセール品が本当に安いのかを調べる方法 -  &lt;a href=&#34;https://99nyorituryo.hatenablog.com/entry/2019/07/18/232120&#34;&gt;https://99nyorituryo.hatenablog.com/entry/2019/07/18/232120&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;ライフハック&#34;&gt;ライフハック&lt;/h2&gt;
+
 &lt;p&gt;｢便利｣はあえて遮断。ひとり時間でセルフケア＆感性を磨く -  &lt;a href=&#34;https://www.lifehacker.jp/2019/10/book_to_read_hitori-no-jikan.html&#34;&gt;https://www.lifehacker.jp/2019/10/book_to_read_hitori-no-jikan.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【さみしさや孤独感は、｢我慢グセ｣をやめることで解消できる | ライフハッカー［日本版］】  &lt;a href=&#34;https://www.lifehacker.jp/2019/10/book_to_read_how-we-feel-lonely.html&#34;&gt;https://www.lifehacker.jp/2019/10/book_to_read_how-we-feel-lonely.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;料理&#34;&gt;料理&lt;/h2&gt;
+
 &lt;p&gt;月額1万2000円＋食材費で約32食ぶんを「つくおき」、出張料理サブスクの詳細 | TechCrunch Japan -  &lt;a href=&#34;https://jp.techcrunch.com/2019/03/21/sharedine-follow-up/&#34;&gt;https://jp.techcrunch.com/2019/03/21/sharedine-follow-up/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;クタクタでも速攻でつくれる! バズレシピ 太らないおかず編 (扶桑社ムック) | リュウジ |本 | 通販 | Amazon -  &lt;a href=&#34;https://www.amazon.co.jp/%E3%82%AF%E3%82%BF%E3%82%AF%E3%82%BF%E3%81%A7%E3%82%82%E9%80%9F%E6%94%BB%E3%81%A7%E3%81%A4%E3%81%8F%E3%82%8C%E3%82%8B-%E3%83%90%E3%82%BA%E3%83%AC%E3%82%B7%E3%83%94-%E5%A4%AA%E3%82%89%E3%81%AA%E3%81%84%E3%81%8A%E3%81%8B%E3%81%9A%E7%B7%A8-%E6%89%B6%E6%A1%91%E7%A4%BE%E3%83%A0%E3%83%83%E3%82%AF-%E3%83%AA%E3%83%A5%E3%82%A6%E3%82%B8/dp/4594613705&#34;&gt;https://www.amazon.co.jp/%E3%82%AF%E3%82%BF%E3%82%AF%E3%82%BF%E3%81%A7%E3%82%82%E9%80%9F%E6%94%BB%E3%81%A7%E3%81%A4%E3%81%8F%E3%82%8C%E3%82%8B-%E3%83%90%E3%82%BA%E3%83%AC%E3%82%B7%E3%83%94-%E5%A4%AA%E3%82%89%E3%81%AA%E3%81%84%E3%81%8A%E3%81%8B%E3%81%9A%E7%B7%A8-%E6%89%B6%E6%A1%91%E7%A4%BE%E3%83%A0%E3%83%83%E3%82%AF-%E3%83%AA%E3%83%A5%E3%82%A6%E3%82%B8/dp/4594613705&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;話し方&#34;&gt;話し方&lt;/h2&gt;
+
 &lt;p&gt;ビジネスの好感度アップ。｢近況報告トレーニング｣で説明力を鍛え  &lt;a href=&#34;https://www.lifehacker.jp/2019/10/book_to_read_setsumei-ryoku.html&#34;&gt;https://www.lifehacker.jp/2019/10/book_to_read_setsumei-ryoku.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;3000人取材して学んだ､ほとんどしゃべらずして､話上手になれる20の方法 - 暮らしのブログ -  &lt;a href=&#34;https://kurashi-no-blog.hatenablog.jp/entry/hanashijyozu.co.jp&#34;&gt;https://kurashi-no-blog.hatenablog.jp/entry/hanashijyozu.co.jp&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;その他&#34;&gt;その他&lt;/h2&gt;
+
 &lt;p&gt;速報：アマゾンがプライム会員費を値上げ、年4900円/月500円に。4月12日から - Engadget 日本版 -  &lt;a href=&#34;https://engt.co/2U8phZ3&#34;&gt;https://engt.co/2U8phZ3&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;csvq/README.md at master · mithrandie/csvq · GitHub -  &lt;a href=&#34;https://github.com/mithrandie/csvq/blob/master/README.md&#34;&gt;https://github.com/mithrandie/csvq/blob/master/README.md&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;データベースのクラウド移行を強力に推進する新製品「Insight Database Testing」を発表-  &lt;a href=&#34;https://www.insight-tec.com/press/20190410_idt/&#34;&gt;https://www.insight-tec.com/press/20190410_idt/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Dropbox、無料版のアクセス端末を3台までにひっそり制限 - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1903/15/news081.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1903/15/news081.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;時代別Fate/Grand Orderサーヴァント一覧 | Call of History ー歴史の呼び声ー -  &lt;a href=&#34;https://call-of-history.com/archives/19976&#34;&gt;https://call-of-history.com/archives/19976&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Firebase、そろそろ触っとかないとやばいんかな？と思っているあなたのための超基本Firebaseの勉強に役立つサイトまとめ -  &lt;a href=&#34;https://www.katonobo.com/entry/firebase-start&#34;&gt;https://www.katonobo.com/entry/firebase-start&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Googleの「Cloud Run」が正式サービスに。KnativeベースでDockerコンテナをサーバレスとして実行 － Publickey -  &lt;a href=&#34;https://www.publickey1.jp/blog/19/googlecloud_runknativedocker.html&#34;&gt;https://www.publickey1.jp/blog/19/googlecloud_runknativedocker.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;あのGoogleアナリティクス実践本が全文無料公開！インターネット最高 ｜ DevelopersIO -  &lt;a href=&#34;https://dev.classmethod.jp/marketing/google-analytics-book-for-free/&#34;&gt;https://dev.classmethod.jp/marketing/google-analytics-book-for-free/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;iPhoneの名前を「猫の画像ください」にしたら電車内で知らない人からAirDropで大量の猫画像をもらえた - Togetter -  &lt;a href=&#34;https://togetter.com/li/1393722&#34;&gt;https://togetter.com/li/1393722&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;WordPressをやめ、静的サイトジェネレーターで高速化した話 - ICS MEDIA -  &lt;a href=&#34;https://ics.media/entry/190410/&#34;&gt;https://ics.media/entry/190410/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;[PowerShell] macOSに PowerShell Core 6.2 をインストールして色々試す ｜ DevelopersIO -  &lt;a href=&#34;https://dev.classmethod.jp/etc/mac-powershell-core-6-2/&#34;&gt;https://dev.classmethod.jp/etc/mac-powershell-core-6-2/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;無料RPAで「ソリティア」に挑んでみた　業務自動化でゲームも自動化できるか (1/2) - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1903/03/news033.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1903/03/news033.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;無料RPAで「ソリティア」に挑んでみた　業務自動化でゲームも自動化できるか (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;) - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1903/03/news033.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1903/03/news033.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;rsyncの悲劇 〜本番環境を消し飛ばす前に覚えておきたいこと〜 -  &lt;a href=&#34;https://kuroeveryday.blogspot.com/2019/12/how-to-delete-all-in-the-production-environment.html&#34;&gt;https://kuroeveryday.blogspot.com/2019/12/how-to-delete-all-in-the-production-environment.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;SQL学習オンラインサービス「Start-SQL」をリリースしました -  &lt;a href=&#34;https://gothedistance.hatenadiary.jp/entry/2019/12/25/110000&#34;&gt;https://gothedistance.hatenadiary.jp/entry/2019/12/25/110000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;TRPGカフェにようこそ!! | サイコミ -  &lt;a href=&#34;https://cycomi.com/fw/cycomibrowser/chapter/title/127&#34;&gt;https://cycomi.com/fw/cycomibrowser/chapter/title/127&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;VueとSVGを使ってシューティングゲーム『ネコ🐱メザシ🐟アタック🌟』を作ったのでソースと解説 - Qiita -  &lt;a href=&#34;https://qiita.com/yuneco/items/34daf063075d03c4eede&#34;&gt;https://qiita.com/yuneco/items/34daf063075d03c4eede&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;windows7(32bit)→windows10(64bit)に移行＆反省点　まとめ　その１｜ころろん｜note -  &lt;a href=&#34;https://note.mu/cororonnxx/n/n345ad7d903fa&#34;&gt;https://note.mu/cororonnxx/n/n345ad7d903fa&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;WindowsからLinuxファイルへのアクセスが可能に ～「Windows 10 19H1」におけるWSLの改善 - 窓の杜 -  &lt;a href=&#34;https://forest.watch.impress.co.jp/docs/news/1170221.html&#34;&gt;https://forest.watch.impress.co.jp/docs/news/1170221.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「アウトプット大全」から学ぶ最強のアウトプット術とは？ -  &lt;a href=&#34;https://kalogchange.hatenablog.com/entry/2019/12/28/113647&#34;&gt;https://kalogchange.hatenablog.com/entry/2019/12/28/113647&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;個人開発したアプリが大コケしてるので失敗要因を分析してみた - Qiita -  &lt;a href=&#34;https://qiita.com/aiiro_swift/items/fe27eae6e708b187d341&#34;&gt;https://qiita.com/aiiro_swift/items/fe27eae6e708b187d341&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Microsoft、新しいExcel関数「XLOOKUP」を発表 ～「VLOOKUP」や「HLOOKUP」の後継 - 窓の杜 -  &lt;a href=&#34;https://forest.watch.impress.co.jp/docs/news/1204053.html&#34;&gt;https://forest.watch.impress.co.jp/docs/news/1204053.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;透明性のある「エンジニアリング組織」をつくるためにやったこと -  &lt;a href=&#34;https://logmi.jp/tech/articles/322128&#34;&gt;https://logmi.jp/tech/articles/322128&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;オブジェクト指向でつまづく7つのポイントと処方箋 - t-hom’s diary -  &lt;a href=&#34;https://thom.hateblo.jp/entry/2019/02/09/235248&#34;&gt;https://thom.hateblo.jp/entry/2019/02/09/235248&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ゲームAIの基礎がこの一冊に集約されている！──『ゲームAI技術入門── -  &lt;a href=&#34;https://huyukiitoichi.hatenadiary.jp/entry/2019/10/07/080000&#34;&gt;https://huyukiitoichi.hatenadiary.jp/entry/2019/10/07/080000&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;1万円でお釣りがくる、「サバイバルゲーム」を手ぶらで始める手引き＆沼へ堕ちる3つのルート | マネ会 -  &lt;a href=&#34;https://hikakujoho.com/hobby/10843000014440&#34;&gt;https://hikakujoho.com/hobby/10843000014440&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【動画】「筋膜リリース」ってそんなに凄いの？ 肩こり首こり腰痛・・・これら全てから開放されるとか : ライフハックちゃんねる弐式 -  &lt;a href=&#34;http://lifehack2ch.livedoor.biz/archives/51703045.html&#34;&gt;http://lifehack2ch.livedoor.biz/archives/51703045.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Apple Watchより生活に馴染む!? 2週間駆動の「HUAWEI WATCH GT2」 -  &lt;a href=&#34;https://japanese.engadget.com/jp-2019-12-24-apple-watch-2-huawei-watch-gt2-2019.html&#34;&gt;https://japanese.engadget.com/jp-2019-12-24-apple-watch-2-huawei-watch-gt2-2019.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;チャットコミュニケーションの問題と心理的安全性の課題  &lt;a href=&#34;https://www.slideshare.net/TokorotenNakayama/eof2019&#34;&gt;https://www.slideshare.net/TokorotenNakayama/eof2019&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;プロのUXデザイナーから学ぶ！デザインをする時にグレースケールで始めると、デザインがよくなる4つ理由 | コリス -  &lt;a href=&#34;https://coliss.com/articles/build-websites/operation/design/you-should-design-without-color-first.html&#34;&gt;https://coliss.com/articles/build-websites/operation/design/you-should-design-without-color-first.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Googleがデベロッパー向けドメイン「.dev」の先取りプログラムを開始。優先的にドメイン名を確保可能 － Publickey -  &lt;a href=&#34;https://www.publickey1.jp/blog/19/googledev.html&#34;&gt;https://www.publickey1.jp/blog/19/googledev.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Microsoft、ターミナル・コードエディター向けの新フォント「Cascadia Code」を発表 - 窓の杜 -  &lt;a href=&#34;https://forest.watch.impress.co.jp/docs/news/1208455.html&#34;&gt;https://forest.watch.impress.co.jp/docs/news/1208455.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;2020年、ブロックチェーンは全く異なる「何か」になる -  &lt;a href=&#34;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00138/022500241/&#34;&gt;https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00138/022500241/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Günter Burkhardtの正統派変態トリテ「トランプ、トリックス、ゲーム！」日本語版を出版します: 数寄ゲームズ -  &lt;a href=&#34;http://sukigames.seesaa.net/article/464056970.html&#34;&gt;http://sukigames.seesaa.net/article/464056970.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Engineering Managerをやっていた間の振り返りとまとめ -  &lt;a href=&#34;http://masartz.hatenablog.jp/entry/2019/08/19/231450&#34;&gt;http://masartz.hatenablog.jp/entry/2019/08/19/231450&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;彼女が盗まれたのは制服だけだったのか　ミステリー漫画「制服ぬすまれた」がTwitterで大反響、緊急重版へ (1/2) - ねとらぼ -  &lt;a href=&#34;https://nlab.itmedia.co.jp/nl/articles/1903/01/news034.html&#34;&gt;https://nlab.itmedia.co.jp/nl/articles/1903/01/news034.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;彼女が盗まれたのは制服だけだったのか　ミステリー漫画「制服ぬすまれた」がTwitterで大反響、緊急重版へ (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;) - ねとらぼ -  &lt;a href=&#34;https://nlab.itmedia.co.jp/nl/articles/1903/01/news034.html&#34;&gt;https://nlab.itmedia.co.jp/nl/articles/1903/01/news034.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;バレットジャーナルの基本の書き方 -  &lt;a href=&#34;https://www.wakibungu.com/wct/bujo-rapid/&#34;&gt;https://www.wakibungu.com/wct/bujo-rapid/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ラーメン屋は何曜日に休みが多いのかAPIを利用して調べた - 最終防衛ライン3 -  &lt;a href=&#34;http://lastline.hatenablog.com/entry/2019/02/22/154011&#34;&gt;http://lastline.hatenablog.com/entry/2019/02/22/154011&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「残業が多い職種」ランキング、ITコンサルタントなど上位に　1位は……？ - ITmedia NEWS -  &lt;a href=&#34;https://www.itmedia.co.jp/news/articles/1911/26/news129.html&#34;&gt;https://www.itmedia.co.jp/news/articles/1911/26/news129.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Amazon、広告付きの無料音楽サービスを計画中。4月中旬にも発表か - Engadget 日本版 -  &lt;a href=&#34;https://engt.co/2UkMG9P&#34;&gt;https://engt.co/2UkMG9P&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;仮想通貨獲得のプログラム「ウイルスではない」と 無罪判決 | NHKニュース -  &lt;a href=&#34;https://www3.nhk.or.jp/news/html/20190327/k10011862471000.html&#34;&gt;https://www3.nhk.or.jp/news/html/20190327/k10011862471000.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ベビーカー通勤を１ヶ月間してわかったこと（都内30代男性の話） -  &lt;a href=&#34;https://anond.hatelabo.jp/20190515155913&#34;&gt;https://anond.hatelabo.jp/20190515155913&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「Webナイト宮崎 Vol.5 ～てげ飲みながらLTしたい～」レポート | てげほげ -  &lt;a href=&#34;https://tege.work/web-night-miyazaki-vol5-report/&#34;&gt;https://tege.work/web-night-miyazaki-vol5-report/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;AtCoder（競技プログラミング）の色・ランクと実力評価、問題例 - chokudaiのブログ -  &lt;a href=&#34;http://chokudai.hatenablog.com/entry/2019/02/11/155904&#34;&gt;http://chokudai.hatenablog.com/entry/2019/02/11/155904&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;給料・年収を上げて収入を増やす方法 -  &lt;a href=&#34;https://www.lifehacker.jp/2019/10/200879-how-to-raise-your-salary-matome.html&#34;&gt;https://www.lifehacker.jp/2019/10/200879-how-to-raise-your-salary-matome.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【新元号は令和（れいわ）に決定されましたというのを見ましたよという話。】  &lt;a href=&#34;https://freedom-for-space.blogspot.com/2019/04/blog-post.html&#34;&gt;https://freedom-for-space.blogspot.com/2019/04/blog-post.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;民主党議員が「悪夢のような民主党政権？」との仰せなので、当時に起きた口蹄疫を簡単に振り返ってみた。 - Togetter -  &lt;a href=&#34;https://togetter.com/li/1318612&#34;&gt;https://togetter.com/li/1318612&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「ニコニコ」と「AbemaTV」が4月から連携&amp;ndash;両社がパートナーシップを締結 - CNET Japan -  &lt;a href=&#34;https://japan.cnet.com/article/35134792/&#34;&gt;https://japan.cnet.com/article/35134792/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;栄村大震災 - アンサイクロペディア -  &lt;a href=&#34;https://ja.uncyclopedia.info/wiki/%E6%A0%84%E6%9D%91%E5%A4%A7%E9%9C%87%E7%81%BD&#34;&gt;https://ja.uncyclopedia.info/wiki/%E6%A0%84%E6%9D%91%E5%A4%A7%E9%9C%87%E7%81%BD&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「人狼」でサイバーセキュリティを学ぶスマホアプリが公開、犯罪者陣営とCSIRT陣営に分かれて対戦 - INTERNET Watch -  &lt;a href=&#34;https://internet.watch.impress.co.jp/docs/news/1198367.html&#34;&gt;https://internet.watch.impress.co.jp/docs/news/1198367.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;寝る前｢1分の仕込み｣で睡眠は劇的に改善する | 睡眠 -  &lt;a href=&#34;https://toyokeizai.net/articles/-/285347?page=2&#34;&gt;https://toyokeizai.net/articles/-/285347?page=2&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;1ヶ月間実践したら漫画を描く生産性が3倍になった5つのことが勉強などにも応用できそう - Togetter -  &lt;a href=&#34;https://togetter.com/li/1322136&#34;&gt;https://togetter.com/li/1322136&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;年末の大掃除に。自然に部屋が片づく逆説メソッド -  &lt;a href=&#34;https://www.lifehacker.jp/2019/12/book_to_read_katazuke-1.html&#34;&gt;https://www.lifehacker.jp/2019/12/book_to_read_katazuke-1.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【AIがキャリアシナリオを診断・提示するアプリ「VIEW」正式ローンチ】  &lt;a href=&#34;https://jp.techcrunch.com/2019/02/27/ai-career-simulation-app-view-launched/&#34;&gt;https://jp.techcrunch.com/2019/02/27/ai-career-simulation-app-view-launched/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;朝日新聞「平成の30冊」を発表　１位「１Ｑ８４」 ２位「わたしを離さないで」 ３位「告白」｜好書好日 -  &lt;a href=&#34;https://book.asahi.com/article/12182809&#34;&gt;https://book.asahi.com/article/12182809&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;猫と人とのマッチングサービス「nyatching」の全国登録開始、殺処分ゼロ目指す | TechCrunch Japan -  &lt;a href=&#34;https://jp.techcrunch.com/2019/02/22/nyans-nyatching-222/&#34;&gt;https://jp.techcrunch.com/2019/02/22/nyans-nyatching-222/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;コミティア128【F36b 嗚呼、いいきもち】のお品書きです！負けヒロイン達にフォーカスを当てた、小説とブックレット形式の新刊を出します！各ヒロインごとに一冊ずつ、計四種類(各700円)となります！当日はこのポスターを目印にお越しください！  &lt;a href=&#34;https://twitter.com/ah_goodfeeling/status/1125364937373569024&#34;&gt;https://twitter.com/ah_goodfeeling/status/1125364937373569024&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;分散SNSを使って技術を覚える -  &lt;a href=&#34;https://eng-blog.iij.ad.jp/archives/4235&#34;&gt;https://eng-blog.iij.ad.jp/archives/4235&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Microsoftコードページ932 - Wikipedia -  &lt;a href=&#34;https://ja.m.wikipedia.org/wiki/Microsoft%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9A%E3%83%BC%E3%82%B8932&#34;&gt;https://ja.m.wikipedia.org/wiki/Microsoft%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9A%E3%83%BC%E3%82%B8932&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;士業男子が、文章力を身につけるための作文技術を紹介する - とある士業の知的な日常 -  &lt;a href=&#34;https://www.mayaaaaasama.com/entry/2019/02/19/215118&#34;&gt;https://www.mayaaaaasama.com/entry/2019/02/19/215118&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;腸よ鼻よ - GANMA!(ガンマ) -  &lt;a href=&#34;https://ganma.jp/chohana&#34;&gt;https://ganma.jp/chohana&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;一人飲みに優しい街「仙台」へ、1泊2日の週末旅。旬の美味しいものと極上の日本酒に出会う｜エクスペディア -  &lt;a href=&#34;https://welove.expedia.co.jp/destination/japan/43596/&#34;&gt;https://welove.expedia.co.jp/destination/japan/43596/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;未経験者には全てが黒魔術に見える呪いがある - Qiita -  &lt;a href=&#34;https://qiita.com/mackey0022/items/73f77873facc22e22c8c&#34;&gt;https://qiita.com/mackey0022/items/73f77873facc22e22c8c&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;「スキル不足で職場に居場所がないおじさん」の救済プロジェクトに関わった時の話 -  &lt;a href=&#34;https://blog.tinect.jp/?p=62002&#34;&gt;https://blog.tinect.jp/?p=62002&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;4WayでPCが2台入る大容量なバックパックは22の機能を搭載 -  &lt;a href=&#34;https://www.lifehacker.jp/2019/09/amazon-avan-harris-avan-peak.html&#34;&gt;https://www.lifehacker.jp/2019/09/amazon-avan-harris-avan-peak.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;マドラーにもなる、新しいデザインのティーバッグ｢T-stick｣ | -  &lt;a href=&#34;https://www.lifehacker.jp/2019/09/lht_t-stick.html&#34;&gt;https://www.lifehacker.jp/2019/09/lht_t-stick.html&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;世界一わかりやすいClean Architecture - nuits.jp blog -  &lt;a href=&#34;http://bit.ly/2QqlJ7L&#34;&gt;http://bit.ly/2QqlJ7L&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Clean Architectureは全てのプログラマにお奨めしたい良著｜erukiti｜note -  &lt;a href=&#34;https://note.mu/erukiti/n/n36fee4a014d9&#34;&gt;https://note.mu/erukiti/n/n36fee4a014d9&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【「Qiita」がエンジニアの転職支援サービスを今春開始へ | TechCrunch Japan】  &lt;a href=&#34;https://jp.techcrunch.com/2019/03/05/qiita-jobs/&#34;&gt;https://jp.techcrunch.com/2019/03/05/qiita-jobs/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;【ウミガメのスープ 本家『ラテシン』】  &lt;a href=&#34;http://sui-hei.net/&#34;&gt;http://sui-hei.net/&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ブラウザで動く落書き判定モデルの作り方 - エクサウィザーズ Engineer Blog -  &lt;a href=&#34;https://techblog.exawizards.com/entry/2019/02/06/120301&#34;&gt;https://techblog.exawizards.com/entry/2019/02/06/120301&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -568,12 +929,16 @@ python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://
       <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
       <guid>https://eda3.dev/1/</guid>
       <description>&lt;p&gt;PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;Python version 2.7 does not support a &#39;F&#39; prefix
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;**[Preferences]**を開く&lt;/li&gt;
-&lt;li&gt;**[Editor]&lt;strong&gt;→&lt;/strong&gt;[Inspections]**を選択&lt;/li&gt;
-&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、**[Code compatibillity inspection]**を選択&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Preferences]&lt;/strong&gt;を開く&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Editor]&lt;/strong&gt;→&lt;strong&gt;[Inspections]&lt;/strong&gt;を選択&lt;/li&gt;
+&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、&lt;strong&gt;[Code compatibillity inspection]&lt;/strong&gt;を選択&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Options&lt;/strong&gt;の中から&lt;strong&gt;2.7&lt;/strong&gt;のチェックを外す&lt;/li&gt;
 &lt;/ol&gt;
 </description>
