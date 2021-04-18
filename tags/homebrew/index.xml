@@ -1,20 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
+    <xsl:output method="html" doctype-system="about:legacy-compat" />
+    <xsl:template match="/rss">
+      <html lang="ja-jp">
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Homebrew RSS | eda3-dev</title>
+          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
+        </head>
+        <body>
+          <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+          <main>
+            <div class="u-wrapper">
+              <div class="u-padding">
+                <h2 class="Heading-title">
+                  
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/homebrew/index.xml" rel="bookmark">Homebrew RSS</a>
+                  
+                </h2>
+                
+                <p>
+                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
+                </p>
+                
+              </div>
+            </div>
+          </main>
+          
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
   <channel>
     <title>Homebrew on eda3-dev</title>
     <link>https://eda3.dev/tags/homebrew/</link>
     <description>Recent content in Homebrew on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://eda3.dev/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Mac】HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
       <link>https://eda3.dev/3/</link>
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/3/</guid>
-      <description>タイトルどおり $ mas install 539883307 # LINE masが入っていないいない場合はまずそっちから入れる $ brew install mas</description>
+      <description>&lt;p&gt;タイトルどおり&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mas install &lt;span style=&#34;color:#ae81ff&#34;&gt;539883307&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# LINE&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;masが入っていないいない場合はまずそっちから入れる&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ brew install mas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

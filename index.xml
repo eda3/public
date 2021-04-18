@@ -1,92 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
+    <xsl:output method="html" doctype-system="about:legacy-compat" />
+    <xsl:template match="/rss">
+      <html lang="ja-jp">
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>RSS | eda3-dev</title>
+          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
+        </head>
+        <body>
+          <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+          <main>
+            <div class="u-wrapper">
+              <div class="u-padding">
+                <h2 class="Heading-title">
+                  
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/index.xml" rel="bookmark">RSS</a>
+                  
+                </h2>
+                
+                <p>
+                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
+                </p>
+                
+              </div>
+            </div>
+          </main>
+          
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
   <channel>
     <title>eda3-dev</title>
     <link>https://eda3.dev/</link>
     <description>Recent content on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 18 Apr 2021 06:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 06:00:00 +0900</lastBuildDate>
+    <atom:link href="https://eda3.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Rust&#43;WebAssembly(WASM)の実装をGitHub Pagesに載せる方法</title>
-      <link>https://eda3.dev/7/</link>
-      <pubDate>Sun, 18 Apr 2021 06:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/7/</guid>
-      <description>Rust+WebAssembly(wasm)の実装をGitHub Pagesに載せるのに苦労したのでやり方を解説します。 前提 rustupが使え</description>
-    </item>
-    
-    <item>
-      <title>日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について</title>
-      <link>https://eda3.dev/6/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/6/</guid>
-      <description>これは 箪笥 Advent Calendar 2020 の14日目の記事です。 ※箪笥とは卓ゲ箪笥というボードゲーム・TRPG好きが集まるMastodonインスタンスです。 はじめに み</description>
-    </item>
-    
-    <item>
-      <title>【Python】10分で分かるpandas その1</title>
-      <link>https://eda3.dev/5/</link>
-      <pubDate>Mon, 10 Aug 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/5/</guid>
-      <description>10分で分かるpandas はじめに この記事はpandas公式チュートリアル「10 minutes to pandas」の写経及び解説です 以下のURLを参考にして</description>
-    </item>
-    
-    <item>
-      <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
-      <link>https://eda3.dev/4/</link>
-      <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/4/</guid>
-      <description>プロキシ経由でpip installする場合、--proxyを設定すること。 また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせ</description>
-    </item>
-    
-    <item>
-      <title>【Mac】HomebrewでLINEをインストールするには`mas install 539883307`と実行すればいいらしい</title>
-      <link>https://eda3.dev/3/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/3/</guid>
-      <description>タイトルどおり $ mas install 539883307 # LINE masが入っていないいない場合はまずそっちから入れる $ brew install mas</description>
-    </item>
-    
-    <item>
-      <title>【Yearly】今年一年SNSに共有した記事一覧</title>
-      <link>https://eda3.dev/2/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/2/</guid>
-      <description>自分はよくネットで見かけた良さそうな記事をSNSに共有するんですけど、今回2019年に共有した記事の一覧をカテゴリ別にわけました。 目次 おもし</description>
-    </item>
-    
-    <item>
-      <title>【Python】PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
-      <link>https://eda3.dev/1/</link>
-      <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
-      
-      <guid>https://eda3.dev/1/</guid>
-      <description>PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。 Python version 2.7 does not support a &#39;F&#39;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://eda3.dev/about/</link>
-      <pubDate>Sun, 10 Sep 1989 00:00:00 +0000</pubDate>
-      
-      <guid>https://eda3.dev/about/</guid>
-      <description>技術ブログ、呟き、雑記帳 Twitter: https://Twitter.com/eda3__ Github: http://github.com/eda3</description>
-    </item>
-    
-    <item>
-      <title>get in touch</title>
-      <link>https://eda3.dev/contact/</link>
+      <title>Posts</title>
+      <link>https://eda3.dev/post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eda3.dev/contact/</guid>
+      <guid>https://eda3.dev/post/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
