@@ -1,108 +1,20 @@
-
-
-
-
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
-    <xsl:output method="html" doctype-system="about:legacy-compat" />
-    <xsl:template match="/rss">
-      <html lang="ja-jp">
-        <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>PowerShell RSS | eda3-dev</title>
-          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
-        </head>
-        <body>
-          <nav class="u-background">
-  <div class="u-wrapper">
-    <ul class="Banner">
-      <li class="Banner-item Banner-item--title">
-        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
-          <main>
-            <div class="u-wrapper">
-              <div class="u-padding">
-                <h2 class="Heading-title">
-                  
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/powershell/index.xml" rel="bookmark">PowerShell RSS</a>
-                  
-                </h2>
-                
-                <p>
-                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
-                </p>
-                
-              </div>
-            </div>
-          </main>
-          
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
-        </body>
-      </html>
-    </xsl:template>
-  </xsl:stylesheet>
   <channel>
     <title>PowerShell on eda3-dev</title>
     <link>https://eda3.dev/tags/powershell/</link>
     <description>Recent content in PowerShell on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://eda3.dev/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
       <link>https://eda3.dev/4/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
+      
       <guid>https://eda3.dev/4/</guid>
-      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br /&gt;
-また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br /&gt;
-以下、例を示す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;$user=&amp;quot;ここにユーザID&amp;quot;
-$password=&amp;quot;ここにプロキシのパスワード&amp;quot;
-$server=&amp;quot;ここにプロキシサーバアドレス&amp;quot;
-
-$env:HTTP_PROXY=&amp;quot;http://${user}:${password}@${server}:80&amp;quot;
-$env:HTTPS_PROXY=&amp;quot;https://${user}:${password}@${server}:80&amp;quot;
-
-# pyperclip, seleniumをpip installする場合
-python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user pyperclip
-python -m pip --proxy=&amp;quot;http://${user}:${password}@${server}:80&amp;quot; install --user selenium
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>プロキシ経由でpip installする場合、--proxyを設定すること。 また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせ</description>
     </item>
+    
   </channel>
 </rss>

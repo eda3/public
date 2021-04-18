@@ -1,165 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://eda3.dev/categories/</loc>
     <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/post/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/categories/rust/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/tags/rust/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/7/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/tags/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/tags/webassembly/</loc>
-    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/</loc>
     <lastmod>2021-04-18T06:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/categories/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/</loc>
-    <lastmod>2020-12-14T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eda3.dev/post/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/tags/rust/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/categories/rust/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/7/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/tags/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/tags/webassembly/</loc>
+    <lastmod>2021-04-18T06:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://eda3.dev/tags/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/</loc>
     <lastmod>2020-12-14T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eda3.dev/categories/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/</loc>
+    <lastmod>2020-12-14T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://eda3.dev/6/</loc>
     <lastmod>2020-12-14T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/categories/python/</loc>
-    <lastmod>2020-08-10T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/tags/python/</loc>
-    <lastmod>2020-08-10T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/pandas/</loc>
     <lastmod>2020-08-10T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eda3.dev/tags/python/</loc>
+    <lastmod>2020-08-10T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/categories/python/</loc>
+    <lastmod>2020-08-10T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://eda3.dev/5/</loc>
     <lastmod>2020-08-10T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/powershell/</loc>
     <lastmod>2020-02-04T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/4/</loc>
     <lastmod>2020-02-04T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/homebrew/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/line/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://eda3.dev/categories/mac/</loc>
-    <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/mac/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eda3.dev/categories/mac/</loc>
+    <lastmod>2020-01-09T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://eda3.dev/3/</loc>
     <lastmod>2020-01-09T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/categories/yearly/</loc>
     <lastmod>2019-12-31T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/2/</loc>
     <lastmod>2019-12-31T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/categories/editor/</loc>
     <lastmod>2019-06-16T06:58:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/tags/pycharm/</loc>
     <lastmod>2019-06-16T06:58:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/1/</loc>
     <lastmod>2019-06-16T06:58:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eda3.dev/about/</loc>
     <lastmod>1989-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eda3.dev/contact/</loc>
   </url>
-  
 </urlset>
