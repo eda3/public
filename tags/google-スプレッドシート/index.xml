@@ -1,177 +1,20 @@
-
-
-
-
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
-    <xsl:output method="html" doctype-system="about:legacy-compat" />
-    <xsl:template match="/rss">
-      <html lang="ja-jp">
-        <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Google スプレッドシート RSS | eda3-dev</title>
-          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
-        </head>
-        <body>
-          <nav class="u-background">
-  <div class="u-wrapper">
-    <ul class="Banner">
-      <li class="Banner-item Banner-item--title">
-        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
-      </li>
-      
-      <li class="Banner-item">
-        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
-          <main>
-            <div class="u-wrapper">
-              <div class="u-padding">
-                <h2 class="Heading-title">
-                  
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/index.xml" rel="bookmark">Google スプレッドシート RSS</a>
-                  
-                </h2>
-                
-                <p>
-                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
-                </p>
-                
-              </div>
-            </div>
-          </main>
-          
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
-        </body>
-      </html>
-    </xsl:template>
-  </xsl:stylesheet>
   <channel>
     <title>Google スプレッドシート on eda3-dev</title>
     <link>https://eda3.dev/tags/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/</link>
     <description>Recent content in Google スプレッドシート on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 14 Dec 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://eda3.dev/tags/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/tags/google-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について</title>
       <link>https://eda3.dev/6/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0900</pubDate>
+      
       <guid>https://eda3.dev/6/</guid>
-      <description>&lt;p&gt;これは &lt;a href=&#34;https://adventar.org/calendars/6102&#34;&gt;箪笥 Advent Calendar 2020&lt;/a&gt; の14日目の記事です。&lt;br&gt;
-※箪笥とは&lt;a href=&#34;https://tablegame.mstdn.cloud/&#34;&gt;卓ゲ箪笥&lt;/a&gt;というボードゲーム・TRPG好きが集まるMastodonインスタンスです。&lt;/p&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;みなさん、日程調整はしておりますか？&lt;br&gt;
-私は趣味でボドゲやTRPGやマーダーミステリー、最近はAmong usをよく遊ぶのですが、その中で一番たいへんなのが……&lt;/p&gt;
-&lt;p&gt;・&lt;br&gt;
-・&lt;br&gt;
-・ &lt;br&gt;
-＿人人人人人人人人人人人人人＿&lt;br&gt;
-＞　日程調整がとても大変！　＜&lt;br&gt;
-￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y￣&lt;br&gt;
-・&lt;br&gt;
-・&lt;br&gt;
-・&lt;/p&gt;
-&lt;p&gt;日程調整を毎回やっていただいてる幹事さん、GMさんの皆様には感謝の念しかありません。&lt;br&gt;
-今回、その日程調整を行ううえで便利な方法について、説明したいと思います。&lt;/p&gt;
-&lt;h2 id=&#34;日程調整における一つの問題点&#34;&gt;日程調整における一つの問題点&lt;/h2&gt;
-&lt;p&gt;卓修羅、ゲーム修羅の方々はよく並行して日程調整を行うことがあるかと思います。&lt;br&gt;
-日程調整の数が増えれば増えるほど懸念しなければいけないのが&lt;strong&gt;日程の更新漏れ&lt;/strong&gt;でしょう。&lt;/p&gt;
-&lt;p&gt;たとえば4つの日程調整を抱えてるとして、1つの日程が確定した場合、残り3つの日程調整表は「予定あり」にしなければなりません。
-そうしないと予定があいてると思われて、予定がダブルブッキングする可能性が増えますよね。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;├── a(伝◯)      ← ①予定確定！1/30に遊ぶ！
-├── b(伝◯)      ← ②1/30は予定あり更新しなきゃ……
-├── c(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
-└── d(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;今回はGoogle スプレッドシートでの日程調整を行うことで、以下のように複数の予定を自動的に変更してくれるような方法を説明します。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;── 親元   ← ②1/30を予定ありに変更
-   ├── a  ← ①予定確定！1/30に遊ぶ！
-   ├── b  ← ③親元が変更されたので1/30が自動的に予定ありになる
-   ├── c  ← ③親元が変更されたので1/30が自動的に予定ありになる
-   └── d  ← ③親元が変更されたので1/30が自動的に予定ありになる
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-スプレッドシートによる日程調整&#34;&gt;Google スプレッドシートによる日程調整&lt;/h2&gt;
-&lt;p&gt;自分が日程調整を行うときによく使うのが、今回の主題となる「Google スプレッドシート」です。
-以下のようなテンプレートをコピーして、日程調整に使っております。&lt;br&gt;
-こちらのテンプレートについてはご自由にコピーしてお持ち帰りください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1IYpUVP0MWcipTCUrPhTaJDzwz4E5yh81YMMsWWCv5Ow/edit#gid=999809520&#34;&gt;日程調整シートテンプレ(Google スプレッドシート)&lt;/a&gt;&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;3-1.png&#34;
-         alt=&#34;日程調整シートテンプレのスクショ&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;画像をみていただければ分かる通り、日程調整シートのセルB4には以下の関数が記載されております。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;=IMPORTRANGE(&amp;ldquo;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&amp;rdquo;,&amp;ldquo;2021/1月!B4:B35&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;上の数式を使うことにより、複数の調整シートがあったとしても&lt;strong&gt;親となるスプレッドシートを一つ更新するだけで&lt;/strong&gt;子の日程調整表がすべて同時に更新される仕組みになっています。&lt;/p&gt;
-&lt;p&gt;ちなみに、親元となる個人日程表は以下のリンク先にあります。
-こちらのテンプレートについてもご自由にコピーしてお持ち帰りください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214&#34;&gt;個人日程調整テンプレ(Google スプレッドシート)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;!注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;コピーした場合アクセス権限が初期化されます。今回IMPORTRANGE関数を使うため、個人日程調整テンプレについてはコピー後に以下の操作を行ってください。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;画面右上の「共有」ボタンをクリック&lt;/li&gt;
-&lt;li&gt;「リンクを取得」の下側、「制限付き」を「リンクを知っている全員」に変更&lt;/li&gt;
-&lt;li&gt;「完了」ボタンをクリック
-&lt;figure&gt;
-    &lt;img src=&#34;3-2.png&#34;
-         alt=&#34;ユーザやグループとの共有画面&#34;/&gt; 
-&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;importrange関数&#34;&gt;IMPORTRANGE関数&lt;/h2&gt;
-&lt;p&gt;Google スプレッドシートで日程調整するときに便利なアレ、それが&lt;strong&gt;IMPORTRANGE関数&lt;/strong&gt;です。
-構文は以下のとおりです。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;IMPORTRANGE(スプレッドシートキー, [シート名!]範囲の文字列)
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;importrange関数第一引数スプレッドシートキーについて&#34;&gt;IMPORTRANGE関数第一引数：「スプレッドシートキー」について&lt;/h3&gt;
-&lt;p&gt;Google スプレッドシートのURLの太字の部分がスプレッドシートキーです。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/&#34;&gt;https://docs.google.com/spreadsheets/d/&lt;/a&gt;&lt;strong&gt;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&lt;/strong&gt;/edit#gid=1227163214&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;4-1.png&#34;
-         alt=&#34;個人日程調整テンプレのURL部分&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;こちらのスプレッドシートキーについては&lt;strong&gt;シートをコピーして複製するたび変更&lt;/strong&gt;されるため、今回のテンプレをお持ち帰りいただいた際は適宜変更をお願いします。&lt;/p&gt;
-&lt;h3 id=&#34;importrange関数第二引数シート名範囲の文字列について&#34;&gt;IMPORTRANGE関数第二引数：「[シート名!]範囲の文字列」について&lt;/h3&gt;
-&lt;p&gt;こちらは基本的には日程調整表に表示させたい部分を入れます。
-以下の画像のとおり、シート：「2021/1月」のB列4行目～35行目を表示させる場合は、&lt;strong&gt;2021/1月!B4:B35&lt;/strong&gt;と入力します&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;4-2.png&#34;
-         alt=&#34;個人日程調整テンプレの範囲の部分&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;そうして出来上がったのは以下のIMPORTRANGE関数です。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;=IMPORTRANGE(&amp;ldquo;1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24&amp;rdquo;,&amp;ldquo;2021/1月!B4:B35&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;親元となる&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214&#34;&gt;個人日程調整テンプレ&lt;/a&gt;を修正するだけで子の日程調整表がすべて同期されるので、個人的にはおすすめのやり方です。&lt;br&gt;
-ぜひ、この記事を読んでいただいた方は試してみてください！&lt;/p&gt;
-</description>
+      <description>これは 箪笥 Advent Calendar 2020 の14日目の記事です。 ※箪笥とは卓ゲ箪笥というボードゲーム・TRPG好きが集まるMastodonインスタンスです。 はじめに み</description>
     </item>
+    
   </channel>
 </rss>
