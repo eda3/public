@@ -1,0 +1,182 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    
+    Rust&#43;WebAssembly(WASM)の実装をGitHub Pagesに載せる方法 | eda3-dev
+    
+  </title>
+  
+  
+  <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
+  
+  <meta name="generator" content="Hugo 0.55.6" />
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://eda3.dev/7/" rel="bookmark">Rust&#43;WebAssembly(WASM)の実装をGitHub Pagesに載せる方法</a>
+  </h2>
+  
+  <time datetime="2021-04-18T06:00:00&#43;09:00">
+    18 April, 2021
+  </time>
+  
+</header>
+  
+
+<p>Rust+WebAssembly(wasm)の実装をGitHub Pagesに載せるのに苦労したのでやり方を解説します。</p>
+
+<h1 id="前提">前提</h1>
+
+<ol>
+<li><code>rustup</code>が使えること<br />
+→ <a href="https://rustup.rs">導入方法</a></li>
+<li><code>Node.js</code>が使えること<br />
+→ <a href="https://nodejs.org/ja/download/">導入方法</a></li>
+<li><code>wasm-pack</code>が使えること<br />
+→ <a href="https://rustwasm.github.io/wasm-pack/installer/">導入方法</a></li>
+<li>GitHub Pagesへのページ登録方法を知っていること</li>
+</ol>
+
+<h1 id="環境">環境</h1>
+
+<ul>
+<li>OS:Windows 10</li>
+<li>rust:1.50.0 (f04e7fab7 2021-02-04)</li>
+<li>toolchain:stable-x86_64-pc-windows-gnu</li>
+<li>rustup:1.23.1 (3df2264a9 2020-11-30)</li>
+<li>Node.js:6.14.4</li>
+</ul>
+
+<h1 id="準備">準備</h1>
+
+<p>まずはこちらの記事から、「4.2. Hello,World!」まで進め、ローカル環境でRust+wasmのHello,Worldが表示できるところまで進めましょう。
+<a href="https://rustwasm.github.io/docs/book/">https://rustwasm.github.io/docs/book/</a></p>
+
+<p>また、有志の方が途中まで和訳したページもあるのでそちらを参照するのもよいかと思います。<br />
+<a href="https://moshg.github.io/rustwasm-book-ja/">https://moshg.github.io/rustwasm-book-ja/</a></p>
+
+<p>手っ取り早くHello,Worldまでいきたいという人のためにテンプレートを用意したので、こちらのリポジトリを<code>git clone</code>して頂いても大丈夫です。<br />
+<a href="https://github.com/eda3/rust-wasm-template">https://github.com/eda3/rust-wasm-template</a></p>
+
+<p>上記のリポジトリを扱う場合についてコマンドベースで説明します。</p>
+
+<h1 id="テンプレートリポジトリを利用する方法">テンプレートリポジトリを利用する方法</h1>
+
+<ol>
+<li>以下のコマンドを実行し、リポジトリをclone<br />
+<code>git clone https://github.com/eda3/rust-wasm-template.git</code></li>
+<li>cloneしたリポジトリに移動<br />
+<code>cd rust-wasm-template</code></li>
+<li>ブラウザ表示用のディレクトリに移動<br />
+<code>cd www</code></li>
+<li>wasm用にHello,Worldのソースをビルドする<br />
+<code>wasm-pack build</code></li>
+<li>wasm用のパッケージインストールを実行<br />
+<code>npm install</code></li>
+<li>ローカル確認用にサーバの始動を実行<br />
+<code>npm start</code></li>
+<li><a href="https://localhost:8080/">https://localhost:8080/</a> を確認し、以下の文章が表示されることを確認<br />
+<code>Hello, rust-wasm-template!</code><br />
+※上記メッセージは<code>rust-wasm-template/src/lib.rs</code>で変更できます</li>
+</ol>
+
+<h1 id="github-pagesで出力結果を確認する方法">GitHub Pagesで出力結果を確認する方法</h1>
+
+<p>GitHub Pagesで結果を確認する場合、上記の方法では確認することが出来ません。wwwディレクトリをGitHubにpushした場合でも、以下のとおりHello,Worldは実行されません。<br />
+リポジトリ：<a href="https://github.com/eda3/rust-wasm-template/tree/master/www">https://github.com/eda3/rust-wasm-template/tree/master/www</a><br />
+GitHub Pages:<a href="https://eda3.github.io/rust-wasm-template/www/">https://eda3.github.io/rust-wasm-template/www/</a></p>
+
+<p>GitHub Pagesで結果を確認する場合、wwwディレクトリで以下のコマンドを実行する必要があります。<br />
+<code>npm run-script build</code></p>
+
+<p>上記コマンド実行後、www/distの内容をGitHubにpushすればWebサーバ側でも確認することが出来ます。<br />
+リポジトリ：<a href="https://github.com/eda3/rust-wasm-template/tree/master/www/dist">https://github.com/eda3/rust-wasm-template/tree/master/www/dist</a><br />
+GitHub Pages:<a href="https://eda3.github.io/rust-wasm-template/www/dist">https://eda3.github.io/rust-wasm-template/www/dist</a></p>
+
+  
+<footer>
+  <ul class="Tags">
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/rust/" rel="tag">Rust</a>
+    </li>
+    
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/webassembly/" rel="tag">WebAssembly</a>
+    </li>
+    
+    
+  </ul>
+</footer>
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+  
+</body>
+</html>
