@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://eda3.dev/css/syntax.css>
+    <link rel="stylesheet" href=https://eda3.dev/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>【Rust&#43;WebAssembly(wasm)】ゲームライブラリMacroquad使おうその1</title>
+
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+<body><aside id="sidenav">
+    <header>
+    
+
+    <a id="branding" href=https://eda3.dev>
+        
+            eda3-dev
+        
+    </a>
+    </header>
+
+    <nav>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">【Rust&#43;WebAssembly(wasm)】ゲームライブラリMacroquad使おうその1</h1>
+    
+      
+    <nav id="TableOfContents"></nav>
+    <p>Rustのクロスプラットフォーム対応ゲームライブラリである<strong>Macroquad</strong>が面白そうなので、使い方をまとめたいと思います。<br>
+公式サイトはこちら。 <a href="https://macroquad.rs">https://macroquad.rs</a></p>
+<h1 id="前提">前提</h1>
+<ol>
+<li>Rustが導入済みであること<br>
+→ <a href="https://rustup.rs">導入方法</a></li>
+</ol>
+<h1 id="環境">環境</h1>
+<ul>
+<li>OS:Windows 10</li>
+<li>rustc 1.50.0 (cb75ad5db 2021-02-10)</li>
+<li>cargo 1.50.0 (f04e7fab7 2021-02-04)</li>
+<li>rustup 1.24.2 (755e2b07e 2021-05-12)</li>
+<li>toolchain:stable-x86_64-pc-windows-gnu</li>
+</ul>
+<h1 id="macroquadとはそもそも何">Macroquadとはそもそも何？</h1>
+<p>Rust製のゲーム用ライブラリであり、クロスプラットフォーム(Web、Windows、Mac、Linux、Android、iOS)に対応しておりシンプルなコードですぐに実行出来るのが特徴です。<br>
+。まずは以下のURL先のExampleをいろいろ触ってみましょう。<br>
+<a href="https://macroquad.rs/examples/">https://macroquad.rs/examples/</a></p>
+<p>今回、Macroquadを使ってWebAssembly出力し、ブラウザ表示をさせるのを目標とします。</p>
+<p>出力結果は以下の画像のリンク先のとおりです。</p>
+<p><a href="https://eda3.github.io/rustwasm/8/"><figure>
+    <img src="1.png"
+         alt="Basic shapes"/> 
+</figure>
+</a>
+リポジトリ: <a href="https://github.com/eda3/rustwasm/tree/master/8">https://github.com/eda3/rustwasm/tree/master/8</a></p>
+<h1 id="ビルドを行う確認する">ビルドを行う、確認する</h1>
+<p>基本的には、<a href="https://github.com/not-fl3/macroquad#readme">githubのREADME記載通り</a>にいきます。</p>
+<ol>
+<li>
+<p>プロジェクトの作成を行う<br>
+※今回、プロジェクトの名前は<strong>basicshapes</strong>にします</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cargo init --bin
+or
+cargo new basicshapes
+</code></pre></div></li>
+<li>
+<p>cargo.tomlを修正し、macroquadを依存関係に加えます</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">dependencies</span>]
+<span style="color:#a6e22e">macroquad</span> = <span style="color:#e6db74">&#34;0.3&#34;</span>
+</code></pre></div></li>
+<li>
+<p>macroquadのコードを記載します</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> macroquad::prelude::<span style="color:#f92672">*</span>;
+
+<span style="color:#75715e">#[macroquad::main(</span><span style="color:#e6db74">&#34;BasicShapes&#34;</span><span style="color:#75715e">)]</span>
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+   <span style="color:#66d9ef">loop</span> {
+      <span style="color:#75715e">// 背景色を薄灰色に設定
+</span><span style="color:#75715e"></span>      clear_background(LIGHTGRAY);
+
+      <span style="color:#75715e">// 青い棒を描画
+</span><span style="color:#75715e"></span>      draw_line(<span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">200.0</span>, <span style="color:#ae81ff">15.0</span>, BLUE);
+
+      <span style="color:#75715e">// 緑の四角を描画
+</span><span style="color:#75715e"></span>      draw_rectangle(screen_width() <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">60.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">60.0</span>, GREEN);
+
+      <span style="color:#75715e">// 黄色い丸を描画
+</span><span style="color:#75715e"></span>      draw_circle(screen_width() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, screen_height() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">15.0</span>, YELLOW);
+
+      <span style="color:#75715e">// 濃灰色で文字を描画
+</span><span style="color:#75715e"></span>      draw_text(<span style="color:#e6db74">&#34;HELLO&#34;</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">30.0</span>, DARKGRAY);
+
+      next_frame().<span style="color:#66d9ef">await</span>
+   }
+}
+</code></pre></div></li>
+<li>
+<p>wasm形式でビルドを行います</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rustup target add wasm32-unknown-unknown
+
+<span style="color:#75715e"># ローカル環境で確認を行う場合</span>
+cargo build --target wasm32-unknown-unknown
+<span style="color:#75715e"># 以下にwasmファイルが出力されます</span>
+<span style="color:#75715e"># basicshapes/target/wasm32-unknown-unknown/debug/basicshapes.wasm</span>
+
+<span style="color:#75715e"># Webサーバ上で確認を行う場合</span>
+cargo build --target wasm32-unknown-unknown --release
+<span style="color:#75715e"># 以下にwasmファイルが出力されます</span>
+<span style="color:#75715e"># basicshapes/target/wasm32-unknown-unknown/release/basicshapes.wasm</span>
+</code></pre></div></li>
+<li>
+<p>wasmファイルロード用のindex.htmlをプロジェクトルートディレクトリに作成します<br>
+※あらかじめ、basicshapes.wasmを同ディレクトリにコピーしておきます</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ja&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+   &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+   &lt;<span style="color:#f92672">title</span>&gt;basicshapes&lt;/<span style="color:#f92672">title</span>&gt;
+   &lt;<span style="color:#f92672">style</span>&gt;
+      <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
+      <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
+      <span style="color:#f92672">canvas</span> {
+         <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+         <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+         <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+         <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+         <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+         <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+         <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">black</span>;
+         <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">0</span>;
+      }
+   &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">canvas</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;glcanvas&#34;</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span>&gt;&lt;/<span style="color:#f92672">canvas</span>&gt;
+<span style="color:#75715e">&lt;!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">load</span>(<span style="color:#e6db74">&#34;basicshapes.wasm&#34;</span>);&lt;/<span style="color:#f92672">script</span>&gt; <span style="color:#75715e">&lt;!-- Your compiled wasm file --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div></li>
+<li>
+<p>ローカル環境で確認するため、以下のコマンドを実行します<br>
+※wasmファイルは「target/wasm32-unknown-unknown/debug/」配下のものを使うこと</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cargo install basic-http-server
+basic-http-server .
+</code></pre></div></li>
+<li>
+<p>ブラウザから確認を行う
+デフォルト設定では <strong>http://localhost:4000/</strong> にアクセスすれば、出力結果が確認できます</p>
+</li>
+</ol>
+<h1 id="最後に">最後に</h1>
+<p>macroquadのExampleがそれなりに充実してますので、今後使い方の解説記事を載せて行く予定です。</p>
+<h1 id="宣伝">宣伝</h1>
+<p>Discord上でRustもくもく会用のギルドを作成しておりますので、興味があるかたは是非参加お願いします！</p>
+<p><a href="https://disboard.org/ja/server/818441066716856332">Rust-SAMURAI</a></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://eda3.dev/7/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://eda3.dev/js/navbutton.js></script>
+</html>
