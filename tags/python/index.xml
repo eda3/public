@@ -1,38 +1,261 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
+    <xsl:output method="html" doctype-system="about:legacy-compat" />
+    <xsl:template match="/rss">
+      <html lang="ja-jp">
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Python RSS | eda3-dev</title>
+          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
+        </head>
+        <body>
+          <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+          <main>
+            <div class="u-wrapper">
+              <div class="u-padding">
+                <h2 class="Heading-title">
+                  
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/python/index.xml" rel="bookmark">Python RSS</a>
+                  
+                </h2>
+                
+                <p>
+                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
+                </p>
+                
+              </div>
+            </div>
+          </main>
+          
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
   <channel>
     <title>Python on eda3-dev</title>
     <link>https://eda3.dev/tags/python/</link>
     <description>Recent content in Python on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://eda3.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Python】10分で分かるpandas その1</title>
       <link>https://eda3.dev/5/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/5/</guid>
-      <description>10分で分かるpandas はじめに この記事はpandas公式チュートリアル「10 minutes to pandas」の写経及び解説です 以下のURLを参考にして</description>
+      <description>&lt;h1 id=&#34;10分で分かるpandas&#34;&gt;10分で分かるpandas&lt;/h1&gt;
+&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;この記事はpandas公式チュートリアル「10 minutes to pandas」の写経及び解説です&lt;/p&gt;
+&lt;p&gt;以下のURLを参考にしています
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python3.7&lt;/li&gt;
+&lt;li&gt;Jupyter Lab&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;とりあえずインポート&#34;&gt;とりあえずインポート&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+np
+pd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下のように各モジュールが表示されればOK
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;**ModuleNotFoundError: No module named &amp;lsquo;pandas&amp;rsquo;**と怒られたのでpandasをまず入れます。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+&amp;lt;ipython-input-1-59ab05e21164&amp;gt; in &amp;lt;module&amp;gt;
+      1 import numpy as np
+----&amp;gt; 2 import pandas as pd
+
+ModuleNotFoundError: No module named &amp;#39;pandas&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;コマンド
+&lt;code&gt;python -m pip install pandas&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;オブジェクトを作る&#34;&gt;オブジェクトを作る&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation&#34;&gt;参考：【10 minutes to pandas - Object creation】&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Seriesクラス&lt;/strong&gt;にリストを入れることで簡単にデータを作ることが出来ます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 簡単に一列作る&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Series(data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;nan, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series&#34;&gt;参考：pandas.Series&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;date_range()メソッド&lt;/strong&gt;を使うことで、特定の期間の日付の行を作成出来ます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 2020年1月１日から6日間のデータ&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;date_range(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20200101&amp;#34;&lt;/span&gt;, periods&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dates
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.date_range.html&#34;&gt;参考：pandas.date_range()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;pandasのDataFrameクラス&lt;strong&gt;引数index&lt;/strong&gt;を指定することで、行インデックスを指定することが出来ます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 行インデックスに2020年1月1日からのデータを指定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 各値にはランダムな数値を入れる&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;), index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;dates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;また、同じくDataFrameクラスの&lt;strong&gt;引数columns&lt;/strong&gt;を指定することで列名を設定することが出来ます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 列名ABCDを設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;), index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;dates, columns&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;list(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ABCD&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas-dataframe&#34;&gt;参考：pandas.DataFrame&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスに辞書型のデータを渡すことで、辞書型のキーの部分が列名になります。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;A&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1.&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;B&amp;#34;&lt;/span&gt;: pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Timestamp(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20200101&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C&amp;#34;&lt;/span&gt;: pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Series(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;list(range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)), dtype&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;float32&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D&amp;#34;&lt;/span&gt;: np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, dtype&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;int32&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;E&amp;#34;&lt;/span&gt;: pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Categorical([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;train&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;train&amp;#34;&lt;/span&gt;]),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;strong&gt;dtypes属性&lt;/strong&gt;に参照することで各列のデータ属性が分かります。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dtypes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Jupyter Labなどを使っている場合、列名がタブ保管で表示されます。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;db2.&amp;lt;TAB&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;データを表示する&#34;&gt;データを表示する&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation&#34;&gt;参考：【10 minutes to pandas - Viewing data】&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;head()メソッド&lt;/strong&gt;を使うことでデータの先頭部を表示できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head&#34;&gt;参考：DataFrame.head()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;同じくDataFrameクラスの&lt;strong&gt;trail()メソッド&lt;/strong&gt;を使うことでデータの後尾部を表示できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tail(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html#pandas-dataframe-tail&#34;&gt;参考：DataFrame.tail()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;index属性&lt;/strong&gt;を参照することでそのデータの行インデックスを表示出来ます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas-dataframe-index&#34;&gt;参考：DataFrame.index&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;to_numpy()メソッド&lt;/strong&gt;を使うことでデータをnumpyで操作しやすいデータに変換できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_numpy()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_numpy()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas-dataframe-to-numpy&#34;&gt;参考：DataFrame.to_numpy()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;describe()メソッド&lt;/strong&gt;を使うことで、データの各列の簡単な統計を取ることができます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;describe()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;T属性&lt;/strong&gt;を参照すると、行列入れ替えたデータにアクセスできます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;また、DataFrameクラスの&lt;strong&gt;transpose()メソッド&lt;/strong&gt;でも同じく行列の入れ替えを取得できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;transpose()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html#pandas-dataframe-t&#34;&gt;参考：DataFrame.T&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html#pandas-dataframe-transpose&#34;&gt;参考：DataFrame.transpose&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;sort_index()メソッド&lt;/strong&gt;を使用することで、行全体もしくは列全体の並び替えを行うことができます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_index()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;strong&gt;引数axis&lt;/strong&gt;に0もしくは&amp;quot;index&amp;quot;を設定すると行に、1もしくは&amp;quot;columns&amp;quot;を設定すると、列を軸に並び替えします(デフォルト値0)。また、&lt;strong&gt;引数ascending&lt;/strong&gt;にFalseを指定すると並び順が降順になります(デフォルト値True)。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_index(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_index(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html#pandas-dataframe-sort-index&#34;&gt;参考：DataFrame.sort_index()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DataFrameクラスの&lt;strong&gt;sort_values()メソッド&lt;/strong&gt;を使用することで行単位もしくは列単位に並び替えを行うことができます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;B&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2020-01-01&amp;#34;&lt;/span&gt;, axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html#pandas-dataframe-sort-values&#34;&gt;参考：DataFrame.sort_values()&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ここで力尽きる残り多くない10分とはthinking-&#34;&gt;（ここで力尽きる。残り……多くない？10分とは:thinking: ）&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#selection&#34;&gt;参考：【10 minutes to pandas - Selection】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#missing-data&#34;&gt;参考：【10 minutes to pandas - Missing data】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#operations&#34;&gt;参考：【10 minutes to pandas - Operations】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#merge&#34;&gt;参考：【10 minutes to pandas - Merge】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#grouping&#34;&gt;参考：【10 minutes to pandas - Grouping】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#reshaping&#34;&gt;参考：【10 minutes to pandas - Reshaping】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#time-series&#34;&gt;参考：【10 minutes to pandas - Time series】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#categoricals&#34;&gt;参考：【10 minutes to pandas - Categoricals】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#plotting&#34;&gt;参考：【10 minutes to pandas - Plotting】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#getting-data-in-out&#34;&gt;参考：【10 minutes to pandas - Getting data in/out】&lt;/a&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#gotchas&#34;&gt;参考：【10 minutes to pandas - Gotchas】&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
-    
     <item>
       <title>【Python】PowerShellからプロキシ経由でpip installする方法</title>
       <link>https://eda3.dev/4/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/4/</guid>
-      <description>プロキシ経由でpip installする場合、--proxyを設定すること。 また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせ</description>
+      <description>&lt;p&gt;プロキシ経由でpip installする場合、&lt;code&gt;--proxy&lt;/code&gt;を設定すること。&lt;br&gt;
+また、環境変数HTTP_PROXYとHTTPS_PROXYも合わせて設定すること。&lt;br&gt;
+以下、例を示す。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$user=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにユーザID&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$password=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシのパスワード&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$server=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ここにプロキシサーバアドレス&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$env:HTTP_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://&lt;/span&gt;${user}&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;${password}&lt;span style=&#34;color:#e6db74&#34;&gt;@&lt;/span&gt;${server}&lt;span style=&#34;color:#e6db74&#34;&gt;:80&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$env:HTTPS_PROXY=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://&lt;/span&gt;${user}&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;${password}&lt;span style=&#34;color:#e6db74&#34;&gt;@&lt;/span&gt;${server}&lt;span style=&#34;color:#e6db74&#34;&gt;:80&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# pyperclip, seleniumをpip installする場合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://&lt;/span&gt;${user}&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;${password}&lt;span style=&#34;color:#e6db74&#34;&gt;@&lt;/span&gt;${server}&lt;span style=&#34;color:#e6db74&#34;&gt;:80&amp;#34;&lt;/span&gt; install --user pyperclip
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip --proxy=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://&lt;/span&gt;${user}&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;${password}&lt;span style=&#34;color:#e6db74&#34;&gt;@&lt;/span&gt;${server}&lt;span style=&#34;color:#e6db74&#34;&gt;:80&amp;#34;&lt;/span&gt; install --user selenium
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>【Python】PyCharmで「python version 2.7 does not support〜」と警告が出たときの対処法</title>
       <link>https://eda3.dev/1/</link>
       <pubDate>Sun, 16 Jun 2019 06:58:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/1/</guid>
-      <description>PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。 Python version 2.7 does not support a &#39;F&#39;</description>
+      <description>&lt;p&gt;PyCharmでf文字列(フォーマット文字列リテラル)を利用したとき、以下のような警告メッセージが表示されるときがあります。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Python version 2.7 does not support a &amp;#39;F&amp;#39; prefix
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下の対処を行えば、上記警告メッセージは表示されなくなります。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;**[Preferences]**を開く&lt;/li&gt;
+&lt;li&gt;**[Editor]&lt;strong&gt;→&lt;/strong&gt;[Inspections]**を選択&lt;/li&gt;
+&lt;li&gt;検索欄で&lt;code&gt;Code compatibillity&lt;/code&gt;と検索し、**[Code compatibillity inspection]**を選択&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Options&lt;/strong&gt;の中から&lt;strong&gt;2.7&lt;/strong&gt;のチェックを外す&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
-    
   </channel>
 </rss>

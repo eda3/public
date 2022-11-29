@@ -1,67 +1,74 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=https://eda3.dev/css/syntax.css>
-    <link rel="stylesheet" href=https://eda3.dev/css/style.css>
-    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-    <title>【Python】10分で分かるpandas その1</title>
-
+<html lang="ja-jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
     
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-  </head>
-<body><aside id="sidenav">
-    <header>
+    【Python】10分で分かるpandas その1 | eda3-dev
     
-
-    <a id="branding" href=https://eda3.dev>
-        
-            eda3-dev
-        
-    </a>
-    </header>
-
-    <nav>
-        
-    </nav>
-</aside>
-<main id="main">
-            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
-            <div class="content">
-    
-    <h1 id="title">【Python】10分で分かるpandas その1</h1>
-    
+  </title>
+  
+  
+  <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
+  
+  <meta name="generator" content="Hugo 0.107.0">
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
       
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#環境">環境</a></li>
-    <li><a href="#とりあえずインポート">とりあえずインポート</a></li>
-    <li><a href="#オブジェクトを作る">オブジェクトを作る</a></li>
-    <li><a href="#データを表示する">データを表示する</a>
-      <ul>
-        <li><a href="#ここで力尽きる残り多くない10分とはthinking-">（ここで力尽きる。残り……多くない？10分とは:thinking: ）</a></li>
-      </ul>
-    </li>
-  </ul>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    <h1 id="10分で分かるpandas">10分で分かるpandas</h1>
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://eda3.dev/5/" rel="bookmark">【Python】10分で分かるpandas その1</a>
+  </h2>
+  
+  <time datetime="2020-08-10T00:00:00&#43;09:00">
+    10 August, 2020
+  </time>
+  
+</header>
+  <h1 id="10分で分かるpandas">10分で分かるpandas</h1>
 <h2 id="はじめに">はじめに</h2>
 <p>この記事はpandas公式チュートリアル「10 minutes to pandas」の写経及び解説です</p>
 <p>以下のURLを参考にしています
@@ -72,115 +79,114 @@
 <li>Jupyter Lab</li>
 </ul>
 <h2 id="とりあえずインポート">とりあえずインポート</h2>
-<pre><code>import numpy as np
+<pre tabindex="0"><code>import numpy as np
 import pandas as pd
 np
 pd
 </code></pre><p>以下のように各モジュールが表示されればOK
 <!-- raw HTML omitted --></p>
 <p>**ModuleNotFoundError: No module named &lsquo;pandas&rsquo;**と怒られたのでpandasをまず入れます。</p>
-<pre><code>
+<pre tabindex="0"><code>
 ---------------------------------------------------------------------------
 ModuleNotFoundError                       Traceback (most recent call last)
 &lt;ipython-input-1-59ab05e21164&gt; in &lt;module&gt;
       1 import numpy as np
 ----&gt; 2 import pandas as pd
 
-ModuleNotFoundError: No module named 'pandas'
-
+ModuleNotFoundError: No module named &#39;pandas&#39;
 </code></pre><p>コマンド
 <code>python -m pip install pandas</code></p>
 <h2 id="オブジェクトを作る">オブジェクトを作る</h2>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation">参考：【10 minutes to pandas - Object creation】</a></p>
 <p><strong>Seriesクラス</strong>にリストを入れることで簡単にデータを作ることが出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
-<span style="color:#75715e"># 簡単に一列作る</span>
-s <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, np<span style="color:#f92672">.</span>nan, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>])
-s
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 簡単に一列作る</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, np<span style="color:#f92672">.</span>nan, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>])
+</span></span><span style="display:flex;"><span>s
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series">参考：pandas.Series</a></p>
 <p><strong>date_range()メソッド</strong>を使うことで、特定の期間の日付の行を作成出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
-<span style="color:#75715e"># 2020年1月１日から6日間のデータ</span>
-dates <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>date_range(<span style="color:#e6db74">&#34;20200101&#34;</span>, periods<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>)
-dates
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2020年1月１日から6日間のデータ</span>
+</span></span><span style="display:flex;"><span>dates <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>date_range(<span style="color:#e6db74">&#34;20200101&#34;</span>, periods<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>dates
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.date_range.html">参考：pandas.date_range()</a></p>
 <p>pandasのDataFrameクラス<strong>引数index</strong>を指定することで、行インデックスを指定することが出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># 行インデックスに2020年1月1日からのデータを指定</span>
-<span style="color:#75715e"># 各値にはランダムな数値を入れる</span>
-df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>), index<span style="color:#f92672">=</span>dates)
-df
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># 行インデックスに2020年1月1日からのデータを指定</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 各値にはランダムな数値を入れる</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>), index<span style="color:#f92672">=</span>dates)
+</span></span><span style="display:flex;"><span>df
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>また、同じくDataFrameクラスの<strong>引数columns</strong>を指定することで列名を設定することが出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># 列名ABCDを設定</span>
-df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>), index<span style="color:#f92672">=</span>dates, columns<span style="color:#f92672">=</span>list(<span style="color:#e6db74">&#34;ABCD&#34;</span>))
-df
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># 列名ABCDを設定</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>), index<span style="color:#f92672">=</span>dates, columns<span style="color:#f92672">=</span>list(<span style="color:#e6db74">&#34;ABCD&#34;</span>))
+</span></span><span style="display:flex;"><span>df
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas-dataframe">参考：pandas.DataFrame</a></p>
 <p>DataFrameクラスに辞書型のデータを渡すことで、辞書型のキーの部分が列名になります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df2 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(
-    {
-        <span style="color:#e6db74">&#34;A&#34;</span>: <span style="color:#ae81ff">1.</span>,
-        <span style="color:#e6db74">&#34;B&#34;</span>: pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#34;20200101&#34;</span>),
-        <span style="color:#e6db74">&#34;C&#34;</span>: pd<span style="color:#f92672">.</span>Series(<span style="color:#ae81ff">1</span>, index<span style="color:#f92672">=</span>list(range(<span style="color:#ae81ff">4</span>)), dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;float32&#34;</span>),
-        <span style="color:#e6db74">&#34;D&#34;</span>: np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">3</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>, dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;int32&#34;</span>),
-        <span style="color:#e6db74">&#34;E&#34;</span>: pd<span style="color:#f92672">.</span>Categorical([<span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#e6db74">&#34;train&#34;</span>, <span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#e6db74">&#34;train&#34;</span>]),
-        <span style="color:#e6db74">&#34;F&#34;</span>: <span style="color:#e6db74">&#34;foo&#34;</span>,
-    }
-)
-df2
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df2 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;A&#34;</span>: <span style="color:#ae81ff">1.</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;B&#34;</span>: pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#34;20200101&#34;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;C&#34;</span>: pd<span style="color:#f92672">.</span>Series(<span style="color:#ae81ff">1</span>, index<span style="color:#f92672">=</span>list(range(<span style="color:#ae81ff">4</span>)), dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;float32&#34;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;D&#34;</span>: np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">3</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>, dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;int32&#34;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;E&#34;</span>: pd<span style="color:#f92672">.</span>Categorical([<span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#e6db74">&#34;train&#34;</span>, <span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#e6db74">&#34;train&#34;</span>]),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;F&#34;</span>: <span style="color:#e6db74">&#34;foo&#34;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>df2
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><strong>dtypes属性</strong>に参照することで各列のデータ属性が分かります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df2<span style="color:#f92672">.</span>dtypes
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>dtypes
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Jupyter Labなどを使っている場合、列名がタブ保管で表示されます。</p>
-<pre><code>db2.&lt;TAB&gt;
+<pre tabindex="0"><code>db2.&lt;TAB&gt;
 </code></pre><!-- raw HTML omitted -->
 <h2 id="データを表示する">データを表示する</h2>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#object-creation">参考：【10 minutes to pandas - Viewing data】</a></p>
 <p>DataFrameクラスの<strong>head()メソッド</strong>を使うことでデータの先頭部を表示できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">2</span>)
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head">参考：DataFrame.head()</a></p>
 <p>同じくDataFrameクラスの<strong>trail()メソッド</strong>を使うことでデータの後尾部を表示できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">2</span>)
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html#pandas-dataframe-tail">参考：DataFrame.tail()</a></p>
 <p>DataFrameクラスの<strong>index属性</strong>を参照することでそのデータの行インデックスを表示出来ます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>index
-df2<span style="color:#f92672">.</span>index
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>index
+</span></span><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>index
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas-dataframe-index">参考：DataFrame.index</a></p>
 <p>DataFrameクラスの<strong>to_numpy()メソッド</strong>を使うことでデータをnumpyで操作しやすいデータに変換できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>to_numpy()
-df2<span style="color:#f92672">.</span>to_numpy()
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_numpy()
+</span></span><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>to_numpy()
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas-dataframe-to-numpy">参考：DataFrame.to_numpy()</a></p>
 <p>DataFrameクラスの<strong>describe()メソッド</strong>を使うことで、データの各列の簡単な統計を取ることができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df2<span style="color:#f92672">.</span>describe()
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>describe()
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>DataFrameクラスの<strong>T属性</strong>を参照すると、行列入れ替えたデータにアクセスできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>T
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>T
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>また、DataFrameクラスの<strong>transpose()メソッド</strong>でも同じく行列の入れ替えを取得できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>transpose()
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>transpose()
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html#pandas-dataframe-t">参考：DataFrame.T</a>
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html#pandas-dataframe-transpose">参考：DataFrame.transpose</a></p>
 <p>DataFrameクラスの<strong>sort_index()メソッド</strong>を使用することで、行全体もしくは列全体の並び替えを行うことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>sort_index()
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_index()
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><strong>引数axis</strong>に0もしくは&quot;index&quot;を設定すると行に、1もしくは&quot;columns&quot;を設定すると、列を軸に並び替えします(デフォルト値0)。また、<strong>引数ascending</strong>にFalseを指定すると並び順が降順になります(デフォルト値True)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
-df<span style="color:#f92672">.</span>sort_index(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, ascending<span style="color:#f92672">=</span>False)
-df<span style="color:#f92672">.</span>sort_index(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, ascending<span style="color:#f92672">=</span>False)
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_index(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_index(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html#pandas-dataframe-sort-index">参考：DataFrame.sort_index()</a></p>
 <p>DataFrameクラスの<strong>sort_values()メソッド</strong>を使用することで行単位もしくは列単位に並び替えを行うことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;B&#34;</span>)
-df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2020-01-01&#34;</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;B&#34;</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2020-01-01&#34;</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html#pandas-dataframe-sort-values">参考：DataFrame.sort_values()</a></p>
 <h3 id="ここで力尽きる残り多くない10分とはthinking-">（ここで力尽きる。残り……多くない？10分とは:thinking: ）</h3>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#selection">参考：【10 minutes to pandas - Selection】</a>
@@ -195,28 +201,43 @@ df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">
 <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#getting-data-in-out">参考：【10 minutes to pandas - Getting data in/out】</a>
 <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#gotchas">参考：【10 minutes to pandas - Gotchas】</a></p>
 
+  
+<footer>
+  <ul class="Tags">
     
-    <div class="nav-next-prev">
-        <div class="nav-prev">
-            
-                <a href="https://eda3.dev/4/"><i class="fas fa-chevron-left"></i></a>
-            
-        </div>
-        <a class="nav-top" href="#">top</i></a>
-        <div class="nav-next">
-            
-                <a href="https://eda3.dev/6/"><i class="fas fa-chevron-right"></i></a>
-            
-        </div>
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/python/" rel="tag">Python</a>
+    </li>
+    
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://eda3.dev/tags/pandas/" rel="tag">pandas</a>
+    </li>
+    
+    
+  </ul>
+</footer>
+
+
+</article>
+
+
+      </div>
     </div>
-    
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
 
-            </div><footer>
-<div class="footer-content">
-
-
-</div>
-</footer></main>
-    </body>
-    <script src=https://eda3.dev/js/navbutton.js></script>
+  
+</body>
 </html>

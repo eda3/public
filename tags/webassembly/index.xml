@@ -1,29 +1,290 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="#stylesheet" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xsl">
+    <xsl:output method="html" doctype-system="about:legacy-compat" />
+    <xsl:template match="/rss">
+      <html lang="ja-jp">
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>WebAssembly RSS | eda3-dev</title>
+          <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
+        </head>
+        <body>
+          <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+          <main>
+            <div class="u-wrapper">
+              <div class="u-padding">
+                <h2 class="Heading-title">
+                  
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/tags/webassembly/index.xml" rel="bookmark">WebAssembly RSS</a>
+                  
+                </h2>
+                
+                <p>
+                  To subscribe to this RSS feed, copy its address and paste it into your favorite feed reader.
+                </p>
+                
+              </div>
+            </div>
+          </main>
+          
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
   <channel>
     <title>WebAssembly on eda3-dev</title>
     <link>https://eda3.dev/tags/webassembly/</link>
     <description>Recent content in WebAssembly on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 23 May 2021 06:00:00 +0900</lastBuildDate><atom:link href="https://eda3.dev/tags/webassembly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 06:00:00 +0900</lastBuildDate>
+    <atom:link href="https://eda3.dev/tags/webassembly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Rust&#43;WebAssembly(wasm)】ゲームライブラリMacroquad使おうその1</title>
       <link>https://eda3.dev/8/</link>
       <pubDate>Sun, 23 May 2021 06:00:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/8/</guid>
-      <description>Rustのクロスプラットフォーム対応ゲームライブラリであるMacroquadが面白そうなので、使い方をまとめたいと思います。 公式サイトはこち</description>
+      <description>&lt;p&gt;Rustのクロスプラットフォーム対応ゲームライブラリである&lt;strong&gt;Macroquad&lt;/strong&gt;が面白そうなので、使い方をまとめたいと思います。&lt;br&gt;
+公式サイトはこちら。 &lt;a href=&#34;https://macroquad.rs&#34;&gt;https://macroquad.rs&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;前提&#34;&gt;前提&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Rustが導入済みであること&lt;br&gt;
+→ &lt;a href=&#34;https://rustup.rs&#34;&gt;導入方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;環境&#34;&gt;環境&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;OS:Windows 10&lt;/li&gt;
+&lt;li&gt;rustc 1.50.0 (cb75ad5db 2021-02-10)&lt;/li&gt;
+&lt;li&gt;cargo 1.50.0 (f04e7fab7 2021-02-04)&lt;/li&gt;
+&lt;li&gt;rustup 1.24.2 (755e2b07e 2021-05-12)&lt;/li&gt;
+&lt;li&gt;toolchain:stable-x86_64-pc-windows-gnu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;macroquadとはそもそも何&#34;&gt;Macroquadとはそもそも何？&lt;/h1&gt;
+&lt;p&gt;Rust製のゲーム用ライブラリであり、クロスプラットフォーム(Web、Windows、Mac、Linux、Android、iOS)に対応しておりシンプルなコードですぐに実行出来るのが特徴です。&lt;br&gt;
+。まずは以下のURL先のExampleをいろいろ触ってみましょう。&lt;br&gt;
+&lt;a href=&#34;https://macroquad.rs/examples/&#34;&gt;https://macroquad.rs/examples/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今回、Macroquadを使ってWebAssembly出力し、ブラウザ表示をさせるのを目標とします。&lt;/p&gt;
+&lt;p&gt;出力結果は以下の画像のリンク先のとおりです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://eda3.github.io/rustwasm/8/&#34;&gt;&lt;figure&gt;&lt;img src=&#34;1.png&#34;
+         alt=&#34;Basic shapes&#34;/&gt;
+&lt;/figure&gt;
+&lt;/a&gt;
+リポジトリ: &lt;a href=&#34;https://github.com/eda3/rustwasm/tree/master/8&#34;&gt;https://github.com/eda3/rustwasm/tree/master/8&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;ビルドを行う確認する&#34;&gt;ビルドを行う、確認する&lt;/h1&gt;
+&lt;p&gt;基本的には、&lt;a href=&#34;https://github.com/not-fl3/macroquad#readme&#34;&gt;githubのREADME記載通り&lt;/a&gt;にいきます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;プロジェクトの作成を行う&lt;br&gt;
+※今回、プロジェクトの名前は&lt;strong&gt;basicshapes&lt;/strong&gt;にします&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo init --bin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;or
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo new basicshapes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cargo.tomlを修正し、macroquadを依存関係に加えます&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;dependencies&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;macroquad&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;macroquadのコードを記載します&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; macroquad::prelude::&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#[macroquad::main(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;BasicShapes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;loop&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// 背景色を薄灰色に設定
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      clear_background(LIGHTGRAY);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// 青い棒を描画
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      draw_line(&lt;span style=&#34;color:#ae81ff&#34;&gt;40.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;40.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;200.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;15.0&lt;/span&gt;, BLUE);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// 緑の四角を描画
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      draw_rectangle(screen_width() &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2.0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60.0&lt;/span&gt;, GREEN);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// 黄色い丸を描画
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      draw_circle(screen_width() &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;30.0&lt;/span&gt;, screen_height() &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;30.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;15.0&lt;/span&gt;, YELLOW);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// 濃灰色で文字を描画
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      draw_text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HELLO&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;30.0&lt;/span&gt;, DARKGRAY);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      next_frame().&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;wasm形式でビルドを行います&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustup target add wasm32-unknown-unknown
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ローカル環境で確認を行う場合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo build --target wasm32-unknown-unknown
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 以下にwasmファイルが出力されます&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# basicshapes/target/wasm32-unknown-unknown/debug/basicshapes.wasm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Webサーバ上で確認を行う場合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo build --target wasm32-unknown-unknown --release
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 以下にwasmファイルが出力されます&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# basicshapes/target/wasm32-unknown-unknown/release/basicshapes.wasm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;wasmファイルロード用のindex.htmlをプロジェクトルートディレクトリに作成します&lt;br&gt;
+※あらかじめ、basicshapes.wasmを同ディレクトリにコピーしておきます&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ja&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;basicshapes&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;margin&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;padding&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;width&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;%&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;overflow&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;hidden&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;absolute&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;background&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;black&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#66d9ef&#34;&gt;z-index&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;glcanvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tabindex&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;load&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;basicshapes.wasm&amp;#34;&lt;/span&gt;);&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- Your compiled wasm file --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ローカル環境で確認するため、以下のコマンドを実行します&lt;br&gt;
+※wasmファイルは「target/wasm32-unknown-unknown/debug/」配下のものを使うこと&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo install basic-http-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;basic-http-server .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ブラウザから確認を行う
+デフォルト設定では &lt;strong&gt;http://localhost:4000/&lt;/strong&gt; にアクセスすれば、出力結果が確認できます&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;最後に&#34;&gt;最後に&lt;/h1&gt;
+&lt;p&gt;macroquadのExampleがそれなりに充実してますので、今後使い方の解説記事を載せて行く予定です。&lt;/p&gt;
+&lt;h1 id=&#34;宣伝&#34;&gt;宣伝&lt;/h1&gt;
+&lt;p&gt;Discord上でRustもくもく会用のギルドを作成しておりますので、興味があるかたは是非参加お願いします！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://disboard.org/ja/server/818441066716856332&#34;&gt;Rust-SAMURAI&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
-    
     <item>
       <title>Rust&#43;WebAssembly(WASM)の実装をGitHub Pagesに載せる方法</title>
       <link>https://eda3.dev/7/</link>
       <pubDate>Sun, 18 Apr 2021 06:00:00 +0900</pubDate>
-      
       <guid>https://eda3.dev/7/</guid>
-      <description>Rust+WebAssembly(wasm)の実装をGitHub Pagesに載せるのに苦労したのでやり方を解説します。 前提 rustupが使え</description>
+      <description>&lt;p&gt;Rust+WebAssembly(wasm)の実装をGitHub Pagesに載せるのに苦労したのでやり方を解説します。&lt;/p&gt;
+&lt;h1 id=&#34;前提&#34;&gt;前提&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;rustup&lt;/code&gt;が使えること&lt;br&gt;
+→ &lt;a href=&#34;https://rustup.rs&#34;&gt;導入方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Node.js&lt;/code&gt;が使えること&lt;br&gt;
+→ &lt;a href=&#34;https://nodejs.org/ja/download/&#34;&gt;導入方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wasm-pack&lt;/code&gt;が使えること&lt;br&gt;
+→ &lt;a href=&#34;https://rustwasm.github.io/wasm-pack/installer/&#34;&gt;導入方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub Pagesへのページ登録方法を知っていること&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;環境&#34;&gt;環境&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;OS:Windows 10&lt;/li&gt;
+&lt;li&gt;rust:1.50.0 (f04e7fab7 2021-02-04)&lt;/li&gt;
+&lt;li&gt;toolchain:stable-x86_64-pc-windows-gnu&lt;/li&gt;
+&lt;li&gt;rustup:1.23.1 (3df2264a9 2020-11-30)&lt;/li&gt;
+&lt;li&gt;Node.js:6.14.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;準備&#34;&gt;準備&lt;/h1&gt;
+&lt;p&gt;まずはこちらの記事から、「4.2. Hello,World!」まで進め、ローカル環境でRust+wasmのHello,Worldが表示できるところまで進めましょう。
+&lt;a href=&#34;https://rustwasm.github.io/docs/book/&#34;&gt;https://rustwasm.github.io/docs/book/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;また、有志の方が途中まで和訳したページもあるのでそちらを参照するのもよいかと思います。&lt;br&gt;
+&lt;a href=&#34;https://moshg.github.io/rustwasm-book-ja/&#34;&gt;https://moshg.github.io/rustwasm-book-ja/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;手っ取り早くHello,Worldまでいきたいという人のためにテンプレートを用意したので、こちらのリポジトリを&lt;code&gt;git clone&lt;/code&gt;して頂いても大丈夫です。&lt;br&gt;
+&lt;a href=&#34;https://github.com/eda3/rust-wasm-template&#34;&gt;https://github.com/eda3/rust-wasm-template&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上記のリポジトリを扱う場合についてコマンドベースで説明します。&lt;/p&gt;
+&lt;h1 id=&#34;テンプレートリポジトリを利用する方法&#34;&gt;テンプレートリポジトリを利用する方法&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;以下のコマンドを実行し、リポジトリをclone
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/eda3/rust-wasm-template.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;cloneしたリポジトリに移動
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd rust-wasm-template
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;ブラウザ表示用のディレクトリに移動
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd www
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;wasm用にHello,Worldのソースをビルドする
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wasm-pack build
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;wasm用のパッケージインストールを実行
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;ローカル確認用にサーバの始動を実行
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm start
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;https://localhost:8080/ を確認し、以下の文章が表示されることを確認
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Hello, rust-wasm-template!
+&lt;/code&gt;&lt;/pre&gt;※上記メッセージは&lt;code&gt;rust-wasm-template/src/lib.rs&lt;/code&gt;で変更できます&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;github-pagesで出力結果を確認する方法&#34;&gt;GitHub Pagesで出力結果を確認する方法&lt;/h1&gt;
+&lt;p&gt;GitHub Pagesで結果を確認する場合、上記の方法では確認することが出来ません。wwwディレクトリをGitHubにpushした場合でも、以下のとおりHello,Worldは実行されません。&lt;br&gt;
+リポジトリ： &lt;a href=&#34;https://github.com/eda3/rust-wasm-template/tree/master/www&#34;&gt;https://github.com/eda3/rust-wasm-template/tree/master/www&lt;/a&gt;&lt;br&gt;
+GitHub Pages: &lt;a href=&#34;https://eda3.github.io/rust-wasm-template/www/&#34;&gt;https://eda3.github.io/rust-wasm-template/www/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub Pagesで結果を確認する場合、wwwディレクトリで以下のコマンドを実行する必要があります。&lt;br&gt;
+&lt;code&gt;npm run-script build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;上記コマンド実行後、www/distの内容をGitHubにpushすればWebサーバ側でも確認することが出来ます。&lt;br&gt;
+リポジトリ： &lt;a href=&#34;https://github.com/eda3/rust-wasm-template/tree/master/www/dist&#34;&gt;https://github.com/eda3/rust-wasm-template/tree/master/www/dist&lt;/a&gt;&lt;br&gt;
+GitHub Pages: &lt;a href=&#34;https://eda3.github.io/rust-wasm-template/www/dist&#34;&gt;https://eda3.github.io/rust-wasm-template/www/dist&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
-    
   </channel>
 </rss>

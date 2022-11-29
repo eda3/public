@@ -1,67 +1,74 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=https://eda3.dev/css/syntax.css>
-    <link rel="stylesheet" href=https://eda3.dev/css/style.css>
-    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-    <title>日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について</title>
-
+<html lang="ja-jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
     
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-  </head>
-<body><aside id="sidenav">
-    <header>
+    日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について | eda3-dev
     
-
-    <a id="branding" href=https://eda3.dev>
-        
-            eda3-dev
-        
-    </a>
-    </header>
-
-    <nav>
-        
-    </nav>
-</aside>
-<main id="main">
-            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
-            <div class="content">
-    
-    <h1 id="title">日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について</h1>
-    
+  </title>
+  
+  
+  <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
+  
+  <meta name="generator" content="Hugo 0.107.0">
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://eda3.dev">eda3-dev</a>
+      </li>
       
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#日程調整における一つの問題点">日程調整における一つの問題点</a></li>
-    <li><a href="#google-スプレッドシートによる日程調整">Google スプレッドシートによる日程調整</a></li>
-    <li><a href="#importrange関数">IMPORTRANGE関数</a>
-      <ul>
-        <li><a href="#importrange関数第一引数スプレッドシートキーについて">IMPORTRANGE関数第一引数：「スプレッドシートキー」について</a></li>
-        <li><a href="#importrange関数第二引数シート名範囲の文字列について">IMPORTRANGE関数第二引数：「[シート名!]範囲の文字列」について</a></li>
-      </ul>
-    </li>
-  </ul>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://eda3.dev/index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    <p>これは <a href="https://adventar.org/calendars/6102">箪笥 Advent Calendar 2020</a> の14日目の記事です。<br>
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://eda3.dev/6/" rel="bookmark">日程調整でGoogleスプレッドシートを使うときに便利なアノ関数について</a>
+  </h2>
+  
+  <time datetime="2020-12-14T00:00:00&#43;09:00">
+    14 December, 2020
+  </time>
+  
+</header>
+  <p>これは <a href="https://adventar.org/calendars/6102">箪笥 Advent Calendar 2020</a> の14日目の記事です。<br>
 ※箪笥とは<a href="https://tablegame.mstdn.cloud/">卓ゲ箪笥</a>というボードゲーム・TRPG好きが集まるMastodonインスタンスです。</p>
 <h2 id="はじめに">はじめに</h2>
 <p>みなさん、日程調整はしておりますか？<br>
@@ -82,12 +89,12 @@
 日程調整の数が増えれば増えるほど懸念しなければいけないのが<strong>日程の更新漏れ</strong>でしょう。</p>
 <p>たとえば4つの日程調整を抱えてるとして、1つの日程が確定した場合、残り3つの日程調整表は「予定あり」にしなければなりません。
 そうしないと予定があいてると思われて、予定がダブルブッキングする可能性が増えますよね。</p>
-<pre><code>├── a(伝◯)      ← ①予定確定！1/30に遊ぶ！
+<pre tabindex="0"><code>├── a(伝◯)      ← ①予定確定！1/30に遊ぶ！
 ├── b(伝◯)      ← ②1/30は予定あり更新しなきゃ……
 ├── c(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
 └── d(調◯さん)   ← ②1/30は予定あり更新しなきゃ……
 </code></pre><p>今回はGoogle スプレッドシートでの日程調整を行うことで、以下のように複数の予定を自動的に変更してくれるような方法を説明します。</p>
-<pre><code>── 親元   ← ②1/30を予定ありに変更
+<pre tabindex="0"><code>── 親元   ← ②1/30を予定ありに変更
    ├── a  ← ①予定確定！1/30に遊ぶ！
    ├── b  ← ③親元が変更されたので1/30が自動的に予定ありになる
    ├── c  ← ③親元が変更されたので1/30が自動的に予定ありになる
@@ -97,9 +104,8 @@
 以下のようなテンプレートをコピーして、日程調整に使っております。<br>
 こちらのテンプレートについてはご自由にコピーしてお持ち帰りください。</p>
 <p><a href="https://docs.google.com/spreadsheets/d/1IYpUVP0MWcipTCUrPhTaJDzwz4E5yh81YMMsWWCv5Ow/edit#gid=999809520">日程調整シートテンプレ(Google スプレッドシート)</a></p>
-<figure>
-    <img src="3-1.png"
-         alt="日程調整シートテンプレのスクショ"/> 
+<figure><img src="3-1.png"
+         alt="日程調整シートテンプレのスクショ"/>
 </figure>
 
 <p>画像をみていただければ分かる通り、日程調整シートのセルB4には以下の関数が記載されております。</p>
@@ -114,31 +120,28 @@
 <li>画面右上の「共有」ボタンをクリック</li>
 <li>「リンクを取得」の下側、「制限付き」を「リンクを知っている全員」に変更</li>
 <li>「完了」ボタンをクリック
-<figure>
-    <img src="3-2.png"
-         alt="ユーザやグループとの共有画面"/> 
+<figure><img src="3-2.png"
+         alt="ユーザやグループとの共有画面"/>
 </figure>
 </li>
 </ol>
 <h2 id="importrange関数">IMPORTRANGE関数</h2>
 <p>Google スプレッドシートで日程調整するときに便利なアレ、それが<strong>IMPORTRANGE関数</strong>です。
 構文は以下のとおりです。</p>
-<pre><code>IMPORTRANGE(スプレッドシートキー, [シート名!]範囲の文字列)
+<pre tabindex="0"><code>IMPORTRANGE(スプレッドシートキー, [シート名!]範囲の文字列)
 </code></pre><h3 id="importrange関数第一引数スプレッドシートキーについて">IMPORTRANGE関数第一引数：「スプレッドシートキー」について</h3>
 <p>Google スプレッドシートのURLの太字の部分がスプレッドシートキーです。</p>
 <p><a href="https://docs.google.com/spreadsheets/d/">https://docs.google.com/spreadsheets/d/</a><strong>1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24</strong>/edit#gid=1227163214</p>
-<figure>
-    <img src="4-1.png"
-         alt="個人日程調整テンプレのURL部分"/> 
+<figure><img src="4-1.png"
+         alt="個人日程調整テンプレのURL部分"/>
 </figure>
 
 <p>こちらのスプレッドシートキーについては<strong>シートをコピーして複製するたび変更</strong>されるため、今回のテンプレをお持ち帰りいただいた際は適宜変更をお願いします。</p>
 <h3 id="importrange関数第二引数シート名範囲の文字列について">IMPORTRANGE関数第二引数：「[シート名!]範囲の文字列」について</h3>
 <p>こちらは基本的には日程調整表に表示させたい部分を入れます。
 以下の画像のとおり、シート：「2021/1月」のB列4行目～35行目を表示させる場合は、<strong>2021/1月!B4:B35</strong>と入力します</p>
-<figure>
-    <img src="4-2.png"
-         alt="個人日程調整テンプレの範囲の部分"/> 
+<figure><img src="4-2.png"
+         alt="個人日程調整テンプレの範囲の部分"/>
 </figure>
 
 <p>そうして出来上がったのは以下のIMPORTRANGE関数です。</p>
@@ -146,28 +149,32 @@
 <p>親元となる<a href="https://docs.google.com/spreadsheets/d/1s0442aoxaBYlM0KRN02bjkjY9cuTk0kjh6_XLbWYY24/edit#gid=1227163214">個人日程調整テンプレ</a>を修正するだけで子の日程調整表がすべて同期されるので、個人的にはおすすめのやり方です。<br>
 ぜひ、この記事を読んでいただいた方は試してみてください！</p>
 
+  
+<footer>
+  <ul class="Tags">
     
-    <div class="nav-next-prev">
-        <div class="nav-prev">
-            
-                <a href="https://eda3.dev/5/"><i class="fas fa-chevron-left"></i></a>
-            
-        </div>
-        <a class="nav-top" href="#">top</i></a>
-        <div class="nav-next">
-            
-                <a href="https://eda3.dev/7/"><i class="fas fa-chevron-right"></i></a>
-            
-        </div>
+    
+    
+    
+  </ul>
+</footer>
+
+
+</article>
+
+
+      </div>
     </div>
-    
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
 
-            </div><footer>
-<div class="footer-content">
-
-
-</div>
-</footer></main>
-    </body>
-    <script src=https://eda3.dev/js/navbutton.js></script>
+  
+</body>
 </html>
