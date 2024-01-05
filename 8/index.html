@@ -19,7 +19,7 @@
   
   <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=">
   
-  <meta name="generator" content="Hugo 0.107.0">
+  <meta name="generator" content="Hugo 0.121.1">
 </head>
 <body>
   <nav class="u-background">
@@ -117,19 +117,19 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">loop</span> {
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 背景色を薄灰色に設定
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      clear_background(LIGHTGRAY);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      clear_background(<span style="color:#66d9ef">LIGHTGRAY</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 青い棒を描画
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_line(<span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">200.0</span>, <span style="color:#ae81ff">15.0</span>, BLUE);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_line(<span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">200.0</span>, <span style="color:#ae81ff">15.0</span>, <span style="color:#66d9ef">BLUE</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 緑の四角を描画
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_rectangle(screen_width() <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">60.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">60.0</span>, GREEN);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_rectangle(screen_width() <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">60.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">60.0</span>, <span style="color:#66d9ef">GREEN</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 黄色い丸を描画
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_circle(screen_width() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, screen_height() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">15.0</span>, YELLOW);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_circle(screen_width() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, screen_height() <span style="color:#f92672">-</span> <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">15.0</span>, <span style="color:#66d9ef">YELLOW</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 濃灰色で文字を描画
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_text(<span style="color:#e6db74">&#34;HELLO&#34;</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">30.0</span>, DARKGRAY);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      draw_text(<span style="color:#e6db74">&#34;HELLO&#34;</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">20.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#66d9ef">DARKGRAY</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      next_frame().<span style="color:#66d9ef">await</span>
 </span></span><span style="display:flex;"><span>   }

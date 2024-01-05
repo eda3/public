@@ -11,7 +11,7 @@
       <html lang="ja-jp">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Categories RSS | eda3-dev</title>
+          <title>news RSS | eda3-dev</title>
           <link rel="stylesheet" href="https://eda3.dev/css/base.min.21688b64210142c045c9a1d930a48fc517f428060c78a3a012d71f971874c5c3.css" integrity="sha256-IWiLZCEBQsBFyaHZMKSPxRf0KAYMeKOgEtcflxh0xcM=" />
         </head>
         <body>
@@ -50,7 +50,7 @@
               <div class="u-padding">
                 <h2 class="Heading-title">
                   
-                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/index.xml" rel="bookmark">Categories RSS</a>
+                  <a class="Heading-link u-clickable" href="https://eda3.dev/categories/news/index.xml" rel="bookmark">news RSS</a>
                   
                 </h2>
                 
@@ -75,12 +75,12 @@
     </xsl:template>
   </xsl:stylesheet>
   <channel>
-    <title>Categories on eda3-dev</title>
-    <link>https://eda3.dev/categories/</link>
-    <description>Recent content in Categories on eda3-dev</description>
+    <title>news on eda3-dev</title>
+    <link>https://eda3.dev/categories/news/</link>
+    <description>Recent content in news on eda3-dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 21 Nov 2023 04:58:13 +0000</lastBuildDate>
-    <atom:link href="https://eda3.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://eda3.dev/categories/news/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
